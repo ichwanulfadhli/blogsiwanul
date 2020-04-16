@@ -19099,4 +19099,13 @@ footer .pull-center {
   }
 }
 
+.my-pic{
+  width: 70%;
+}
+
+@media only screen and (min-width: 600px){
+  .my-pic{
+    width: 20%;
+  } 
+}
 /*# sourceMappingURL=kit-free.css.map */
