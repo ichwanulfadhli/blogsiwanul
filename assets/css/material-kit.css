@@ -19108,4 +19108,12 @@ footer .pull-center {
     width: 20%;
   } 
 }
+
+#toTop{
+  bottom: 3%;
+  right: 5%;
+  display:none;
+  position:fixed;
+  z-index: 9999999999999;
+}
 /*# sourceMappingURL=kit-free.css.map */
