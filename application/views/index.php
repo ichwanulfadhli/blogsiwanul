@@ -65,8 +65,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-						<a href="#" class="nav-link">
-							<i class="material-icons">apps</i> Template
+						<a href="javascript:void(0)" class="nav-link scroll-to" id="recentBlog">
+							<i class="material-icons">bookmark</i> Blog Terbaru
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="javascript:void(0)" class="nav-link scroll-to" id="allBlogs">
+							<i class="material-icons">bookmarks</i> Kumpulan Blog
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="javascript:void(0)" class="nav-link scroll-to" id="aboutMe">
+							<i class="material-icons">person</i> Tentang Saya
 						</a>
 					</li>
 				</ul>
@@ -77,6 +87,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 	<!-- Content -->
+	<!-- Landing content -->
 	<div class="page-header header-filter" id="background" data-parallax="true">
 		<div class="container">
 			<div class="row">
@@ -90,12 +101,121 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			</div>
 		</div>
 	</div>
+	<!-- End of landing content -->
+
+
 	<div class="main main-raised">
+		<!-- Scroll to top button -->
+		<button class="btn btn-primary btn-fab btn-round scroll-to" id="toTop" 
+		data-toggle="tooltip" data-placement="top" title="Ke Atas" data-container="body">
+			<i class="material-icons">arrow_upward</i>
+		</button>
+		<!-- End of scroll to top button -->
+
+
+		<!-- Recent blog -->
 		<div class="container">
-			<div class="section text-center">
-				<h2 class="title">Your main section here</h2>
+			<div class="section text-center recentBlog">
+				<h2 class="title">Blog Terbaru</h2>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="card">
+							<div class="card-body text-left">
+								<h4 class="card-title">Card title</h4>
+								<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+								<p class="card-text">
+									Some quick example text to build on the card
+									title and make up the bulk of the card's content.
+								</p>
+								<a href="#0" class="card-link">Card link</a>
+								<a href="#0" class="card-link">Another link</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+		<!-- End of recent blog -->
+
+		<!-- All blogs -->
+		<div class="container">
+			<div class="section text-center allBlogs">
+				<h2 class="title">Kumpulan Blog</h2>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="card">
+							<div class="card-body text-left">
+								<h4 class="card-title">Card title</h4>
+								<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+								<p class="card-text">
+									Some quick example text to build on the card
+									title and make up the bulk of the card's content.
+								</p>
+								<a href="#0" class="card-link">Card link</a>
+								<a href="#0" class="card-link">Another link</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="card">
+							<div class="card-body text-left">
+								<h4 class="card-title">Card title</h4>
+								<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+								<p class="card-text">
+									Some quick example text to build on the card
+									title and make up the bulk of the card's content.
+								</p>
+								<a href="#0" class="card-link">Card link</a>
+								<a href="#0" class="card-link">Another link</a>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="col-md-4">
+						<div class="card">
+							<div class="card-body text-left">
+								<h4 class="card-title">Card title</h4>
+								<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+								<p class="card-text">
+									Some quick example text to build on the card
+									title and make up the bulk of the card's content.
+								</p>
+								<a href="#0" class="card-link">Card link</a>
+								<a href="#0" class="card-link">Another link</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End of all blogs -->
+
+
+		<!-- About me -->
+		<div class="container">
+			<div class="section text-center aboutMe">
+				<h2 class="title">Tentang Saya</h2>
+				<div class="media d-block d-md-flex mt-3">
+					<img class="d-flex mb-3 mx-auto z-depth-1 img-raised rounded img-fluid my-pic" 
+					src="<?php echo base_url('assets/img/faces/me.jpg') ?>" alt="Ichwanul Fadhli">
+					<div class="media-body text-center text-md-left ml-md-3 ml-0">
+						<h3 class="mt-0 font-weight-bold px-3">Ichwanul Fadhli</h3>
+						<h4 class="text-left description px-3">
+							Ichwanul Fadhli alias "Wanul" adalah seorang remaja laki-laki (<script>document.write(new Date().getFullYear() - 1999 + " tahun");</script>) 
+							yang hobi bermain game, dan melakukan <i>coding</i>. Dia dulu berkeinginan untuk menjadi seorang <i>Game Developer</i>, namun hanya saja 
+							tidak kesampaian. Tetapi hal itu tidak membuat dia untuk berhenti belajar. Ia terus belajar supaya ia bisa menjadi seorang <i>Programmer</i>. 
+							Saat ini dia sedang berkuliah di STIKOM Binaniaga dengan jurusan Teknik Informatika semester 6 dan berharap suatu hari nanti dia dapat 
+							benar-benar menjadi seorang <i>Programmer</i> yang handal.
+						</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End of about me -->
+
+
 	</div>
 	<!-- End of content -->
 
@@ -106,12 +226,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="float-left">
 				<ul>
 					<li>
-						<a href="https://www.instagram.com/ichwa_nf/">
+						<a href="https://www.instagram.com/ichwa_nf/" data-toggle="tooltip" data-placement="top" title="Follow Instagram Saya" data-container="body">
 							Instagram
 						</a>
 					</li>
 					<li>
-						<a href="https://github.com/ichwanulfadhli/">
+						<a href="https://github.com/ichwanulfadhli/" data-toggle="tooltip" data-placement="top" title="Temukan Saya di GitHub" data-container="body">
 							Github
 						</a>
 					</li>
@@ -185,14 +305,38 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			materialKit.initSliders();
 		});
 
+		// Function to scroll to each section on the page
+		$(function(){
+			$(".scroll-to").click(function(){
+				var section = $(this).attr("id");
+				
+				if($('.' + section).length != 0){
+					$("html, body").animate({
+						scrollTop: $('.' + section).offset().top
+					}, 1000);
+				}
+			});
+		});
 
-		function scrollToDownload() {
-			if ($('.section-download').length != 0) {
-				$("html, body").animate({
-					scrollTop: $('.section-download').offset().top
-				}, 1000);
+		// On scroll window, will display "To Top Button"
+		$(window).scroll(function(){
+			if($(this).scrollTop() >= 535){
+				// jQuery fade in animation
+				$("#toTop").fadeIn(350);
 			}
-		}
+			else if($(this).scrollTop() <= 300){
+				// jQuery fade out animation
+				$("#toTop").fadeOut(350);
+			}
+		});
+
+		// Function scroll to top
+		$("#toTop").click(function(){
+			// Scrolling animation
+			$("html, body").animate({
+				scrollTop: 0
+			}, 500);
+		});
 	</script>
 	<!-- End of control center -->
 </body>
