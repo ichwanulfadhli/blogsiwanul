@@ -106,8 +106,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<div class="main main-raised">
 		<!-- Scroll to top button -->
-		<button class="btn btn-primary btn-fab btn-round scroll-to" id="toTop" 
-		data-toggle="tooltip" data-placement="top" title="Ke Atas" data-container="body">
+		<button class="btn btn-primary btn-fab btn-round scroll-to" id="toTop">
 			<i class="material-icons">arrow_upward</i>
 		</button>
 		<!-- End of scroll to top button -->
@@ -295,8 +294,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 		// Displaying random background image on page load
 		window.onload = document.getElementById("background").style.backgroundImage = "url(" + randomBackground(1, 6) + ")";
-	</script>
-	<script>
+
 		$(document).ready(function() {
 			//init DateTimePickers
 			materialKit.initFormExtendedDatetimepickers();
@@ -335,7 +333,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			// Scrolling animation
 			$("html, body").animate({
 				scrollTop: 0
-			}, 500);
+			}, 1000);
 		});
 	</script>
 	<!-- End of control center -->
