@@ -202,8 +202,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="media-body text-center text-md-left ml-md-3 ml-0">
 						<h3 class="mt-0 font-weight-bold px-3">Ichwanul Fadhli</h3>
 						<h4 class="text-left description px-3">
-							Ichwanul Fadhli alias "Wanul" adalah seorang remaja laki-laki (<script>document.write(new Date().getFullYear() - 1999 + " tahun");</script>) 
-							yang hobi bermain game, dan melakukan <i>coding</i>. Dia dulu berkeinginan untuk menjadi seorang <i>Game Developer</i>, namun hanya saja 
+							Ichwanul Fadhli alias "Wanul" adalah seorang pria (<script>document.write(new Date().getFullYear() - 1999 + " tahun");</script>) 
+							yang hobi bermain <i>game</i>, dan melakukan <i>coding</i>. Dia dulu berkeinginan untuk menjadi seorang <i>Game Developer</i>, namun hanya saja 
 							tidak kesampaian. Tetapi hal itu tidak membuat dia untuk berhenti belajar. Ia terus belajar supaya ia bisa menjadi seorang <i>Programmer</i>. 
 							Saat ini dia sedang berkuliah di STIKOM Binaniaga dengan jurusan Teknik Informatika semester 6 dan berharap suatu hari nanti dia dapat 
 							benar-benar menjadi seorang <i>Programmer</i> yang handal.
