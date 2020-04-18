@@ -232,8 +232,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							</script>) asal Bogor
 							yang hobi bermain <i>game</i>, dan melakukan <i>coding</i>. Dia dulu berkeinginan untuk menjadi seorang <i>Game Developer</i>, namun hanya saja
 							tidak kesampaian. Tetapi hal itu tidak membuat dia untuk berhenti belajar. Ia terus belajar supaya ia bisa menjadi seorang <i>Programmer</i>.
-							Saat ini dia sedang berkuliah di STIKOM Binaniaga dengan jurusan Teknik Informatika semester 6 dan berharap suatu hari nanti dia dapat
-							menjadi seorang <i>Programmer</i> yang handal.
+							Saat ini dia sedang berkuliah di STIKOM Binaniaga dengan jurusan Teknik Informatika dan saat ini pula ia sedang berkuliah di semester 6. Dia 
+							berharap suatu hari nanti dia dapat menjadi seorang <i>Programmer</i> yang handal.
 						</h4>
 					</div>
 				</div>
