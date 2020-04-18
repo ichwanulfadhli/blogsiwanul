@@ -35,6 +35,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<link href="<?php echo base_url('assets/css/material-kit.css'); ?>" rel="stylesheet" />
 	<!-- End of CSS files -->
 
+
 	<!-- 
 		####     #######   ################
 		####       #####   ##############
@@ -130,8 +131,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<a href="#0" class="card-link">Baca lebih lanjut...</a>
 							</div>
 							<div class="card-footer text-muted">
-    Tanggal
-  </div>
+								Tanggal
+							</div>
 						</div>
 					</div>
 				</div>
@@ -156,8 +157,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<a href="#0" class="card-link">Baca lebih lanjut...</a>
 							</div>
 							<div class="card-footer text-muted">
-    Tanggal
-  </div>
+								Tanggal
+							</div>
 						</div>
 					</div>
 
@@ -173,8 +174,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<a href="#0" class="card-link">Baca lebih lanjut...</a>
 							</div>
 							<div class="card-footer text-muted">
-    Tanggal
-  </div>
+								Tanggal
+							</div>
 						</div>
 					</div>
 
@@ -190,11 +191,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<a href="#0" class="card-link">Baca lebih lanjut...</a>
 							</div>
 							<div class="card-footer text-muted">
-    Tanggal
-  </div>
+								Tanggal
+							</div>
 						</div>
 					</div>
-					
+
 					<div class="col-md-5">
 						<div class="card">
 							<div class="card-body text-left">
@@ -222,15 +223,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="section text-center aboutMe">
 				<h2 class="title">Tentang Saya</h2>
 				<div class="media d-block d-md-flex mt-3">
-					<img class="d-flex mb-3 mx-auto z-depth-1 img-raised rounded img-fluid my-pic" 
-					src="<?php echo base_url('assets/img/faces/me.jpg') ?>" alt="Ichwanul Fadhli">
+					<img class="d-flex mb-3 mx-auto z-depth-1 img-raised rounded img-fluid my-pic" src="<?php echo base_url('assets/img/faces/me.jpg') ?>" alt="Ichwanul Fadhli">
 					<div class="media-body text-center text-md-left ml-md-3 ml-0">
 						<h3 class="mt-0 font-weight-bold px-3">Ichwanul Fadhli</h3>
 						<h4 class="text-left description px-3">
-							Ichwanul Fadhli alias "Wanul" adalah seorang pria (<script>document.write(new Date().getFullYear() - 1999 + " tahun");</script>) asal Bogor 
-							yang hobi bermain <i>game</i>, dan melakukan <i>coding</i>. Dia dulu berkeinginan untuk menjadi seorang <i>Game Developer</i>, namun hanya saja 
-							tidak kesampaian. Tetapi hal itu tidak membuat dia untuk berhenti belajar. Ia terus belajar supaya ia bisa menjadi seorang <i>Programmer</i>. 
-							Saat ini dia sedang berkuliah di STIKOM Binaniaga dengan jurusan Teknik Informatika semester 6 dan berharap suatu hari nanti dia dapat 
+							Ichwanul Fadhli alias "Wanul" adalah seorang pria (<script>
+								document.write(new Date().getFullYear() - 1999 + " tahun");
+							</script>) asal Bogor
+							yang hobi bermain <i>game</i>, dan melakukan <i>coding</i>. Dia dulu berkeinginan untuk menjadi seorang <i>Game Developer</i>, namun hanya saja
+							tidak kesampaian. Tetapi hal itu tidak membuat dia untuk berhenti belajar. Ia terus belajar supaya ia bisa menjadi seorang <i>Programmer</i>.
+							Saat ini dia sedang berkuliah di STIKOM Binaniaga dengan jurusan Teknik Informatika semester 6 dan berharap suatu hari nanti dia dapat
 							menjadi seorang <i>Programmer</i> yang handal.
 						</h4>
 					</div>
@@ -282,10 +284,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<script src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js'); ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('assets/js/plugins/moment.min.js'); ?>"></script>
 	<!-- End of core JS files -->
+	
+	
+	<!-- Javascript smooth scrolling -->
+	<script src="<?php echo base_url('assets/js/jquery.nicescroll.min.js') ?>"></script>
+	<!-- End of Javascript smooth scrolling -->
+
 
 	<!-- Plugin for the Datepicker -->
 	<script src="<?php echo base_url('assets/js/plugins/bootstrap-datetimepicker.js'); ?>" type="text/javascript"></script>
 	<!-- End of plugin for the datepicker -->
+
 
 	<!-- jQuery UI Plugin -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
@@ -332,11 +341,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			materialKit.initSliders();
 		});
 
+		$(document).ready(function() {
+			$("html, body").niceScroll({
+				scrollspeed: 100
+			});
+		});
+
 		// Function to scroll to each section on the page
 		$(function(){
 			$(".scroll-to").click(function(){
 				var section = $(this).attr("id");
-				
+
 				if($('.' + section).length != 0){
 					$("html, body").animate({
 						scrollTop: $('.' + section).offset().top
