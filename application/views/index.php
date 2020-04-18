@@ -116,19 +116,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<div class="container">
 			<div class="section text-center recentBlog">
 				<h2 class="title">Blog Terbaru</h2>
-				<div class="row">
-					<div class="col-md-4">
+				<div class="row justify-content-md-center">
+					<div class="col-md-7">
 						<div class="card">
+							<img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" alt="Card image cap">
 							<div class="card-body text-left">
-								<h4 class="card-title">Card title</h4>
-								<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+								<h4 class="card-title">Judul</h4>
+								<h6 class="card-subtitle mb-2 text-muted">Sub judul</h6>
 								<p class="card-text">
 									Some quick example text to build on the card
 									title and make up the bulk of the card's content.
 								</p>
-								<a href="#0" class="card-link">Card link</a>
-								<a href="#0" class="card-link">Another link</a>
+								<a href="#0" class="card-link">Baca lebih lanjut...</a>
 							</div>
+							<div class="card-footer text-muted">
+    Tanggal
+  </div>
 						</div>
 					</div>
 				</div>
@@ -140,49 +143,71 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<div class="container">
 			<div class="section text-center allBlogs">
 				<h2 class="title">Kumpulan Blog</h2>
-				<div class="row">
-					<div class="col-md-4">
+				<div class="row justify-content-md-center">
+					<div class="col-md-5">
 						<div class="card">
 							<div class="card-body text-left">
-								<h4 class="card-title">Card title</h4>
-								<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+								<h4 class="card-title">Judul</h4>
+								<h6 class="card-subtitle mb-2 text-muted">Sub judul</h6>
 								<p class="card-text">
 									Some quick example text to build on the card
 									title and make up the bulk of the card's content.
 								</p>
-								<a href="#0" class="card-link">Card link</a>
-								<a href="#0" class="card-link">Another link</a>
+								<a href="#0" class="card-link">Baca lebih lanjut...</a>
 							</div>
+							<div class="card-footer text-muted">
+    Tanggal
+  </div>
 						</div>
 					</div>
 
-					<div class="col-md-4">
+					<div class="col-md-5">
 						<div class="card">
 							<div class="card-body text-left">
-								<h4 class="card-title">Card title</h4>
-								<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+								<h4 class="card-title">Judul</h4>
+								<h6 class="card-subtitle mb-2 text-muted">Sub judul</h6>
 								<p class="card-text">
 									Some quick example text to build on the card
 									title and make up the bulk of the card's content.
 								</p>
-								<a href="#0" class="card-link">Card link</a>
-								<a href="#0" class="card-link">Another link</a>
+								<a href="#0" class="card-link">Baca lebih lanjut...</a>
 							</div>
+							<div class="card-footer text-muted">
+    Tanggal
+  </div>
 						</div>
 					</div>
 
-
-					<div class="col-md-4">
+					<div class="col-md-5">
 						<div class="card">
 							<div class="card-body text-left">
-								<h4 class="card-title">Card title</h4>
-								<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+								<h4 class="card-title">Judul</h4>
+								<h6 class="card-subtitle mb-2 text-muted">Sub judul</h6>
 								<p class="card-text">
 									Some quick example text to build on the card
 									title and make up the bulk of the card's content.
 								</p>
-								<a href="#0" class="card-link">Card link</a>
-								<a href="#0" class="card-link">Another link</a>
+								<a href="#0" class="card-link">Baca lebih lanjut...</a>
+							</div>
+							<div class="card-footer text-muted">
+    Tanggal
+  </div>
+						</div>
+					</div>
+					
+					<div class="col-md-5">
+						<div class="card">
+							<div class="card-body text-left">
+								<h4 class="card-title">Judul</h4>
+								<h6 class="card-subtitle mb-2 text-muted">Sub judul</h6>
+								<p class="card-text">
+									Some quick example text to build on the card
+									title and make up the bulk of the card's content.
+								</p>
+								<a href="#0" class="card-link">Baca lebih lanjut...</a>
+							</div>
+							<div class="card-footer text-muted">
+								Tanggal
 							</div>
 						</div>
 					</div>
@@ -202,11 +227,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="media-body text-center text-md-left ml-md-3 ml-0">
 						<h3 class="mt-0 font-weight-bold px-3">Ichwanul Fadhli</h3>
 						<h4 class="text-left description px-3">
-							Ichwanul Fadhli alias "Wanul" adalah seorang pria (<script>document.write(new Date().getFullYear() - 1999 + " tahun");</script>) 
+							Ichwanul Fadhli alias "Wanul" adalah seorang pria (<script>document.write(new Date().getFullYear() - 1999 + " tahun");</script>) asal Bogor 
 							yang hobi bermain <i>game</i>, dan melakukan <i>coding</i>. Dia dulu berkeinginan untuk menjadi seorang <i>Game Developer</i>, namun hanya saja 
 							tidak kesampaian. Tetapi hal itu tidak membuat dia untuk berhenti belajar. Ia terus belajar supaya ia bisa menjadi seorang <i>Programmer</i>. 
 							Saat ini dia sedang berkuliah di STIKOM Binaniaga dengan jurusan Teknik Informatika semester 6 dan berharap suatu hari nanti dia dapat 
-							benar-benar menjadi seorang <i>Programmer</i> yang handal.
+							menjadi seorang <i>Programmer</i> yang handal.
 						</h4>
 					</div>
 				</div>
@@ -262,6 +287,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<script src="<?php echo base_url('assets/js/plugins/bootstrap-datetimepicker.js'); ?>" type="text/javascript"></script>
 	<!-- End of plugin for the datepicker -->
 
+	<!-- jQuery UI Plugin -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<!-- End if jQuery UI plugin -->
+
 
 	<!-- Plugin for the sliders -->
 	<script src="<?php echo base_url('assets/js/plugins/nouislider.min.js'); ?>" type="text/javascript"></script>
@@ -311,7 +340,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				if($('.' + section).length != 0){
 					$("html, body").animate({
 						scrollTop: $('.' + section).offset().top
-					}, 1000);
+					}, 'slow', 'easeInOutCubic');
 				}
 			});
 		});
@@ -333,7 +362,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			// Scrolling animation
 			$("html, body").animate({
 				scrollTop: 0
-			}, 1000);
+			}, 1000, 'easeInOutCubic');
 		});
 	</script>
 	<!-- End of control center -->
