@@ -96,7 +96,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="brand text-center">
 						<!-- <h1>Your title here</h1> -->
 						<img width="80%" class="mylogo" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png'); ?>">
-						<h3 class="title text-center">- Welcome to My Blog! -</h3>
+						<h3 class="title text-center">- Welcome to My Blog -</h3>
 					</div>
 				</div>
 			</div>
@@ -114,8 +114,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 		<!-- Recent blog -->
-		<div class="container">
-			<div class="section text-center recentBlog">
+		<div class="container recentBlog">
+			<div class="section text-center">
 				<h2 class="title">Blog Terbaru</h2>
 				<div class="row justify-content-md-center">
 					<div class="col-md-7">
@@ -141,12 +141,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<!-- End of recent blog -->
 
 		<!-- All blogs -->
-		<div class="container">
-			<div class="section text-center allBlogs">
+		<div class="container allBlogs">
+			<div class="section text-center">
 				<h2 class="title">Kumpulan Blog</h2>
 				<div class="row justify-content-md-center">
 					<div class="col-md-5">
 						<div class="card">
+							<img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" alt="Card image cap">
 							<div class="card-body text-left">
 								<h4 class="card-title">Judul</h4>
 								<h6 class="card-subtitle mb-2 text-muted">Sub judul</h6>
@@ -164,6 +165,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 					<div class="col-md-5">
 						<div class="card">
+							<img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" alt="Card image cap">
 							<div class="card-body text-left">
 								<h4 class="card-title">Judul</h4>
 								<h6 class="card-subtitle mb-2 text-muted">Sub judul</h6>
@@ -181,6 +183,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 					<div class="col-md-5">
 						<div class="card">
+							<img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" alt="Card image cap">
 							<div class="card-body text-left">
 								<h4 class="card-title">Judul</h4>
 								<h6 class="card-subtitle mb-2 text-muted">Sub judul</h6>
@@ -198,6 +201,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 					<div class="col-md-5">
 						<div class="card">
+							<img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" alt="Card image cap">
 							<div class="card-body text-left">
 								<h4 class="card-title">Judul</h4>
 								<h6 class="card-subtitle mb-2 text-muted">Sub judul</h6>
@@ -213,27 +217,51 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</div>
 					</div>
 				</div>
+
+
+				<!-- Pagination -->
+					<nav aria-label="Page navigation">
+						<ul class="pagination justify-content-center mt-5">
+							<li class="page-item">
+								<a class="page-link" href="javascript:;" tabindex="-1">Sebelumnya</a>
+							</li>
+							<li class="page-item">
+								<a class="page-link" href="javascript:;">1</a>
+							</li>
+							<li class="page-item active">
+								<a class="page-link" href="javascript:;">2 <span class="sr-only">(current)</span></a>
+							</li>
+							<li class="page-item">
+								<a class="page-link" href="javascript:;">3</a>
+							</li>
+							<li class="page-item">
+								<a class="page-link" href="javascript:;">Selanjutnya</a>
+							</li>
+						</ul>
+					</nav>
+				<!-- End of pagination -->
+				
+
 			</div>
 		</div>
 		<!-- End of all blogs -->
 
 
 		<!-- About me -->
-		<div class="container">
-			<div class="section text-center aboutMe">
+		<div class="container aboutMe">
+			<div class="section text-center">
 				<h2 class="title">Tentang Saya</h2>
-				<div class="media d-block d-md-flex mt-3">
+				<div class="media px-md-3 d-block d-md-flex mt-3">
 					<img class="d-flex mb-3 mx-auto z-depth-1 img-raised rounded img-fluid my-pic" src="<?php echo base_url('assets/img/faces/me.jpg') ?>" alt="Ichwanul Fadhli">
 					<div class="media-body text-center text-md-left ml-md-3 ml-0">
 						<h3 class="mt-0 font-weight-bold px-3">Ichwanul Fadhli</h3>
 						<h4 class="text-left description px-3">
 							Ichwanul Fadhli alias "Wanul" adalah seorang pria (<script>
 								document.write(new Date().getFullYear() - 1999 + " tahun");
-							</script>) asal Bogor
-							yang hobi bermain <i>game</i>, dan melakukan <i>coding</i>. Dia dulu berkeinginan untuk menjadi seorang <i>Game Developer</i>, namun hanya saja
-							mimpinya tidak kesampaian. Tetapi hal itu tidak membuat dia untuk berhenti belajar. Ia terus belajar supaya ia bisa menjadi seorang <i>Programmer</i>.
-							Saat ini dia sedang berkuliah di STIKOM Binaniaga dengan jurusan Teknik Informatika dan saat ini pula ia sedang berkuliah di semester 6. Dia 
-							berharap suatu hari nanti dia dapat menjadi seorang <i>Programmer</i> yang handal.
+							</script>) asal Bogor yang hobi bermain <i>game</i>, dan melakukan <i>coding</i>. Dia dulu berkeinginan untuk menjadi seorang <i>Game Developer</i>, 
+							namun hanya saja mimpinya tidak kesampaian. Sejak saat itu dia memutuskan untuk menjadi seorang <i>Programmer</i>. Dia belajar dan terus belajar supaya 
+							dia bisa menggapai cita-citanya. Saat ini dia sedang berkuliah di STIKOM Binaniaga Bogor dengan jurusan Teknik Informatika dan juga dia sedang berkuliah di 
+							tingkat 6 (Semester 6).
 						</h4>
 					</div>
 				</div>
@@ -247,8 +275,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 	<!-- Footer -->
-	<footer class="footer footer-default">
-		<div class="container">
+	<footer class="footer footer-default px-5">
+		<div class="container px-5">
 			<div class="float-left">
 				<ul>
 					<li>
