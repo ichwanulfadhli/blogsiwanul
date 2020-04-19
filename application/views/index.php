@@ -231,7 +231,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								document.write(new Date().getFullYear() - 1999 + " tahun");
 							</script>) asal Bogor
 							yang hobi bermain <i>game</i>, dan melakukan <i>coding</i>. Dia dulu berkeinginan untuk menjadi seorang <i>Game Developer</i>, namun hanya saja
-							tidak kesampaian. Tetapi hal itu tidak membuat dia untuk berhenti belajar. Ia terus belajar supaya ia bisa menjadi seorang <i>Programmer</i>.
+							mimpinya tidak kesampaian. Tetapi hal itu tidak membuat dia untuk berhenti belajar. Ia terus belajar supaya ia bisa menjadi seorang <i>Programmer</i>.
 							Saat ini dia sedang berkuliah di STIKOM Binaniaga dengan jurusan Teknik Informatika dan saat ini pula ia sedang berkuliah di semester 6. Dia 
 							berharap suatu hari nanti dia dapat menjadi seorang <i>Programmer</i> yang handal.
 						</h4>
@@ -284,11 +284,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<script src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js'); ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('assets/js/plugins/moment.min.js'); ?>"></script>
 	<!-- End of core JS files -->
-	
-	
-	<!-- Javascript smooth scrolling -->
-	<script src="<?php echo base_url('assets/js/jquery.nicescroll.min.js') ?>"></script>
-	<!-- End of Javascript smooth scrolling -->
 
 
 	<!-- Plugin for the Datepicker -->
