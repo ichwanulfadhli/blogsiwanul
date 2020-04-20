@@ -53,9 +53,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
 		<div class="container">
 			<div class="navbar-translate">
-				<!-- <a class="navbar-brand" href="<?php echo site_url(); ?>">
-					Material Kit
-				</a> -->
 				<button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="navbar-toggler-icon"></span>
@@ -220,27 +217,27 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 				<!-- Pagination -->
-					<nav aria-label="Page navigation">
-						<ul class="pagination justify-content-center mt-5">
-							<li class="page-item">
-								<a class="page-link" href="javascript:;" tabindex="-1">Sebelumnya</a>
-							</li>
-							<li class="page-item">
-								<a class="page-link" href="javascript:;">1</a>
-							</li>
-							<li class="page-item active">
-								<a class="page-link" href="javascript:;">2 <span class="sr-only">(current)</span></a>
-							</li>
-							<li class="page-item">
-								<a class="page-link" href="javascript:;">3</a>
-							</li>
-							<li class="page-item">
-								<a class="page-link" href="javascript:;">Selanjutnya</a>
-							</li>
-						</ul>
-					</nav>
+				<nav aria-label="Page navigation">
+					<ul class="pagination justify-content-center mt-5">
+						<li class="page-item">
+							<a class="page-link" href="javascript:;" tabindex="-1">Sebelumnya</a>
+						</li>
+						<li class="page-item">
+							<a class="page-link" href="javascript:;">1</a>
+						</li>
+						<li class="page-item active">
+							<a class="page-link" href="javascript:;">2 <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="page-item">
+							<a class="page-link" href="javascript:;">3</a>
+						</li>
+						<li class="page-item">
+							<a class="page-link" href="javascript:;">Selanjutnya</a>
+						</li>
+					</ul>
+				</nav>
 				<!-- End of pagination -->
-				
+
 
 			</div>
 		</div>
@@ -258,9 +255,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<h4 class="text-left description px-3">
 							Ichwanul Fadhli alias "Wanul" adalah seorang pria (<script>
 								document.write(new Date().getFullYear() - 1999 + " tahun");
-							</script>) asal Bogor yang hobi bermain <i>game</i>, dan melakukan <i>coding</i>. Dia dulu berkeinginan untuk menjadi seorang <i>Game Developer</i>, 
-							namun hanya saja mimpinya tidak kesampaian. Sejak saat itu dia memutuskan untuk menjadi seorang <i>Programmer</i>. Dia belajar dan terus belajar supaya 
-							dia bisa menggapai cita-citanya. Saat ini dia sedang berkuliah di STIKOM Binaniaga Bogor dengan jurusan Teknik Informatika dan juga dia sedang berkuliah di 
+							</script>) asal Bogor yang hobi bermain <i>game</i>, dan melakukan <i>coding</i>. Dia dulu berkeinginan untuk menjadi seorang <i>Game Developer</i>,
+							namun hanya saja mimpinya tidak kesampaian. Sejak saat itu dia memutuskan untuk menjadi seorang <i>Programmer</i>. Dia belajar dan terus belajar supaya
+							dia bisa menggapai cita-citanya. Saat ini dia sedang berkuliah di STIKOM Binaniaga Bogor dengan jurusan Teknik Informatika dan juga dia sedang berkuliah di
 							tingkat 6 (Semester 6).
 						</h4>
 					</div>
@@ -280,12 +277,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="float-left">
 				<ul>
 					<li>
-						<a href="https://www.instagram.com/ichwa_nf/" data-toggle="tooltip" data-placement="top" title="Follow Instagram Saya" data-container="body">
+						<a href="https://www.instagram.com/ichwa_nf/" target="blank" data-toggle="tooltip" data-placement="top" title="Follow Instagram Saya" data-container="body">
 							Instagram
 						</a>
 					</li>
 					<li>
-						<a href="https://github.com/ichwanulfadhli/" data-toggle="tooltip" data-placement="top" title="Temukan Saya di GitHub" data-container="body">
+						<a href="https://github.com/ichwanulfadhli/" target="blank" data-toggle="tooltip" data-placement="top" title="Temukan Saya di GitHub" data-container="body">
 							Github
 						</a>
 					</li>
@@ -319,8 +316,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- End of plugin for the datepicker -->
 
 
+	<!-- Bug ke tooltip -->
 	<!-- jQuery UI Plugin -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
 	<!-- End if jQuery UI plugin -->
 
 
@@ -330,7 +328,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 	<!-- Control center -->
-	<script src="<?php echo base_url('assets/js/material-kit.js?v=2.0.7'); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/material-kit.js'); ?>" type="text/javascript"></script>
 	<script>
 		// Function to load random image
 		function randomBackground() {
@@ -364,18 +362,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			materialKit.initSliders();
 		});
 
-		$(document).ready(function() {
-			$("html, body").niceScroll({
-				scrollspeed: 100
-			});
-		});
-
 		// Function to scroll to each section on the page
-		$(function(){
-			$(".scroll-to").click(function(){
+		$(function() {
+			$(".scroll-to").click(function() {
 				var section = $(this).attr("id");
 
-				if($('.' + section).length != 0){
+				if ($('.' + section).length != 0) {
 					$("html, body").animate({
 						scrollTop: $('.' + section).offset().top
 					}, 'slow', 'easeInOutCubic');
@@ -384,19 +376,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		});
 
 		// On scroll window, will display "To Top Button"
-		$(window).scroll(function(){
-			if($(this).scrollTop() >= 535){
+		$(window).scroll(function() {
+			if ($(this).scrollTop() >= 535) {
 				// jQuery fade in animation
 				$("#toTop").fadeIn(350);
-			}
-			else if($(this).scrollTop() <= 300){
+			} else if ($(this).scrollTop() <= 300) {
 				// jQuery fade out animation
 				$("#toTop").fadeOut(350);
 			}
 		});
 
 		// Function scroll to top
-		$("#toTop").click(function(){
+		$("#toTop").click(function() {
 			// Scrolling animation
 			$("html, body").animate({
 				scrollTop: 0
