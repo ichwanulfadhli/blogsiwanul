@@ -316,7 +316,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- End of plugin for the datepicker -->
 
 
-	<!-- Bug ke tooltip -->
+	<!-- Bug tooltip karna jQuery-UI -->
 	<!-- jQuery UI Plugin -->
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
 	<!-- End if jQuery UI plugin -->
@@ -370,7 +370,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				if ($('.' + section).length != 0) {
 					$("html, body").animate({
 						scrollTop: $('.' + section).offset().top
-					}, 'slow', 'easeInOutCubic');
+					}, 'slow');
 				}
 			});
 		});
@@ -391,7 +391,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			// Scrolling animation
 			$("html, body").animate({
 				scrollTop: 0
-			}, 1000, 'easeInOutCubic');
+			}, 1000);
 		});
 	</script>
 	<!-- End of control center -->
