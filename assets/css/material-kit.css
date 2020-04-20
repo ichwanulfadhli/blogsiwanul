@@ -15716,25 +15716,25 @@ h2.title {
 .tooltip.bs-tooltip-top .arrow::before,
 .tooltip.bs-tooltip-auto[x-placement^="top"] .arrow::before,
 .tooltip.bs-tooltip-auto[x-placement^="top"] .arrow::before {
-  border-top-color: #ffffff;
+  border-top-color: #393e46;/*#ffffff;*/
 }
 
 .tooltip.bs-tooltip-right .arrow::before,
 .tooltip.bs-tooltip-auto[x-placement^="right"] .arrow::before,
 .tooltip.bs-tooltip-auto[x-placement^="right"] .arrow::before {
-  border-right-color: #ffffff;
+  border-right-color: #393e46;/*#ffffff;*/
 }
 
 .tooltip.bs-tooltip-left .arrow::before,
 .tooltip.bs-tooltip-auto[x-placement^="left"] .arrow::before,
 .tooltip.bs-tooltip-auto[x-placement^="left"] .arrow::before {
-  border-left-color: #ffffff;
+  border-left-color: #393e46;/*#ffffff;*/
 }
 
 .tooltip.bs-tooltip-bottom .arrow::before,
 .tooltip.bs-tooltip-auto[x-placement^="bottom"] .arrow::before,
 .tooltip.bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
-  border-bottom-color: #ffffff;
+  border-bottom-color: #393e46;/*#ffffff;*/
 }
 
 .tooltip-inner {
@@ -15745,11 +15745,11 @@ h2.title {
 .popover,
 .tooltip-inner {
   line-height: 1.5em;
-  background: #ffffff;
+  background: #393e46;/*#ffffff;*/
   border: none;
   border-radius: 3px;
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
-  color: #555;
+  color: #ffffff;/*#555;*/
 }
 
 .popover {
@@ -15791,7 +15791,7 @@ h2.title {
 .popover-body {
   padding: 10px 15px 15px;
   line-height: 1.4;
-  color: #555;
+  color: #ffffff;/*#555;*/
 }
 
 .modal-dialog .modal-content {
