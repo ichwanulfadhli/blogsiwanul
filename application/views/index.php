@@ -105,7 +105,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<div class="main main-raised">
 		<!-- Scroll to top button -->
 		<button class="btn btn-primary btn-fab btn-round scroll-to" id="toTop">
-			<i class="material-icons">arrow_upward</i>
+			<i class="material-icons" style="font-size: 32px;">keyboard_arrow_up</i>
 		</button>
 		<!-- End of scroll to top button -->
 
