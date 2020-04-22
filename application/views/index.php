@@ -338,7 +338,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				'background-2.jpg',
 				'background-3.jpg',
 				'background-4.jpg',
-				'background-5.jpg'
+				'background-5.jpg',
+				'background-6.jpg',
 			];
 
 			// Full path
