@@ -222,11 +222,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<li class="page-item">
 							<a class="page-link" href="javascript:;" tabindex="-1">Sebelumnya</a>
 						</li>
-						<li class="page-item">
-							<a class="page-link" href="javascript:;">1</a>
-						</li>
 						<li class="page-item active">
-							<a class="page-link" href="javascript:;">2 <span class="sr-only">(current)</span></a>
+							<a class="page-link" href="javascript:;">1 <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="page-item">
+							<a class="page-link" href="javascript:;">2</a>
 						</li>
 						<li class="page-item">
 							<a class="page-link" href="javascript:;">3</a>
@@ -255,7 +255,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<h4 class="text-left description px-3">
 							Ichwanul Fadhli alias "Wanul" adalah seorang pria (<script>
 								document.write(new Date().getFullYear() - 1999 + " tahun");
-							</script>) asal Bogor yang hobi bermain <i>game</i>, dan melakukan <i>coding</i>. Dia dulu berkeinginan untuk menjadi seorang <i>Game Developer</i>,
+							</script>) asal Bogor yang hobi mendengarkan musik, dan melakukan <i>coding</i>. Dia dulu berkeinginan untuk menjadi seorang <i>Game Developer</i>,
 							namun hanya saja mimpinya tidak kesampaian. Sejak saat itu dia memutuskan untuk menjadi seorang <i>Programmer</i>. Dia belajar dan terus belajar supaya
 							dia bisa menggapai cita-citanya. Saat ini dia sedang berkuliah di STIKOM Binaniaga Bogor dengan jurusan Teknik Informatika dan juga dia sedang berkuliah di
 							tingkat 6 (Semester 6).
@@ -277,12 +277,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="float-left">
 				<ul>
 					<li>
-						<a href="https://www.instagram.com/ichwa_nf/" target="blank" data-toggle="tooltip" data-placement="top" title="Follow Instagram Saya" data-container="body">
+						<a href="https://www.instagram.com/ichwa_nf/" target="_blank" data-toggle="tooltip" data-placement="top" title="Follow Instagram Saya" data-container="body">
 							Instagram
 						</a>
 					</li>
 					<li>
-						<a href="https://github.com/ichwanulfadhli/" target="blank" data-toggle="tooltip" data-placement="top" title="Temukan Saya di GitHub" data-container="body">
+						<a href="https://github.com/ichwanulfadhli/" target="_blank" data-toggle="tooltip" data-placement="top" title="Temukan Saya di GitHub" data-container="body">
 							Github
 						</a>
 					</li>
