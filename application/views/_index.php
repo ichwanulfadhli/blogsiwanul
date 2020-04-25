@@ -20,7 +20,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<!-- Title -->
 	<title>
-		Blog si WANUL - Home
+		Blog si WANUL
 	</title>
 	<!-- End of title -->
 
@@ -118,7 +118,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<?php
 					if($recent_blog['data'] === null){
 					?>
-					<h3><i>Belum ada konten, stay tuned guys ;)</i></h3>
+					<h3 class="px-5"><i>Belum ada konten, stay tuned guys ; )</i></h3>
 					<?php
 					}
 					else{
@@ -156,7 +156,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<?php
 					if($all_blogs['data'] === null){
 					?>
-					<h3><i>Belum ada konten, stay tuned guys ;)</i></h3>
+					<h3 class="px-5"><i>Belum ada konten, stay tuned guys ; )</i></h3>
 					<?php
 					}
 					else{
