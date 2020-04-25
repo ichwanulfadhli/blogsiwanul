@@ -115,23 +115,33 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="section text-center">
 				<h2 class="title">Blog Terbaru</h2>
 				<div class="row justify-content-md-center">
+					<?php
+					if($recent_blog['data'] === null){
+					?>
+					<h2><i>Belum ada konten, stay tuned.</i></h2>
+					<?php
+					}
+					else{
+					?>
 					<div class="col-md-7">
 						<div class="card">
-							<img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" alt="Card image cap">
+							<img class="card-img-top" src="http://localhost:85/blogsiwanul_project/blogsiwanul_backend/uploads/post_covers/<?php echo $recent_blog['data'][0]['post_cover']; ?>" alt="Card image cap">
 							<div class="card-body text-left">
-								<h4 class="card-title">Judul</h4>
+								<h4 class="card-title"><?php echo $recent_blog['data'][0]['post_title']; ?></h4>
 								<h6 class="card-subtitle mb-2 text-muted">Sub judul</h6>
 								<p class="card-text">
-									Some quick example text to build on the card
-									title and make up the bulk of the card's content.
+									<?php echo $recent_blog['data'][0]['post_description']; ?>
 								</p>
 								<a href="#0" class="card-link">Baca lebih lanjut...</a>
 							</div>
 							<div class="card-footer text-muted">
-								Tanggal
+								<?php echo date("d F Y", strtotime($recent_blog['data'][0]['post_date'])) . ', jam ' . date("H:i", strtotime($recent_blog['data'][0]['post_date'])); ?>
 							</div>
 						</div>
 					</div>
+					<?php
+					}
+					?>
 				</div>
 			</div>
 		</div>
@@ -142,77 +152,37 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="section text-center">
 				<h2 class="title">Kumpulan Blog</h2>
 				<div class="row justify-content-md-center">
+					<?php
+					if($all_blogs['data'] === null){
+					?>
+					<h2><i>Belum ada konten, stay tuned.</i></h2>
+					<?php
+					}
+					else{
+						foreach($all_blogs['data'] as $content){
+					?>
 					<div class="col-md-5">
 						<div class="card">
-							<img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" alt="Card image cap">
+							<img class="card-img-top"
+								src="http://localhost:85/blogsiwanul_project/blogsiwanul_backend/uploads/post_covers/<?php echo $content['post_cover']; ?>"
+								alt="Card image cap">
 							<div class="card-body text-left">
-								<h4 class="card-title">Judul</h4>
+								<h4 class="card-title"><?php echo $content['post_title']; ?></h4>
 								<h6 class="card-subtitle mb-2 text-muted">Sub judul</h6>
 								<p class="card-text">
-									Some quick example text to build on the card
-									title and make up the bulk of the card's content.
+									<?php echo $content['post_description']; ?>
 								</p>
 								<a href="#0" class="card-link">Baca lebih lanjut...</a>
 							</div>
 							<div class="card-footer text-muted">
-								Tanggal
+								<?php echo date("d F Y", strtotime($content['post_date'])) . ', jam ' . date("H:i", strtotime($content['post_date'])); ?>
 							</div>
 						</div>
 					</div>
-
-					<div class="col-md-5">
-						<div class="card">
-							<img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" alt="Card image cap">
-							<div class="card-body text-left">
-								<h4 class="card-title">Judul</h4>
-								<h6 class="card-subtitle mb-2 text-muted">Sub judul</h6>
-								<p class="card-text">
-									Some quick example text to build on the card
-									title and make up the bulk of the card's content.
-								</p>
-								<a href="#0" class="card-link">Baca lebih lanjut...</a>
-							</div>
-							<div class="card-footer text-muted">
-								Tanggal
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-5">
-						<div class="card">
-							<img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" alt="Card image cap">
-							<div class="card-body text-left">
-								<h4 class="card-title">Judul</h4>
-								<h6 class="card-subtitle mb-2 text-muted">Sub judul</h6>
-								<p class="card-text">
-									Some quick example text to build on the card
-									title and make up the bulk of the card's content.
-								</p>
-								<a href="#0" class="card-link">Baca lebih lanjut...</a>
-							</div>
-							<div class="card-footer text-muted">
-								Tanggal
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-5">
-						<div class="card">
-							<img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" alt="Card image cap">
-							<div class="card-body text-left">
-								<h4 class="card-title">Judul</h4>
-								<h6 class="card-subtitle mb-2 text-muted">Sub judul</h6>
-								<p class="card-text">
-									Some quick example text to build on the card
-									title and make up the bulk of the card's content.
-								</p>
-								<a href="#0" class="card-link">Baca lebih lanjut...</a>
-							</div>
-							<div class="card-footer text-muted">
-								Tanggal
-							</div>
-						</div>
-					</div>
+					<?php
+						}
+					}
+					?>
 				</div>
 
 
