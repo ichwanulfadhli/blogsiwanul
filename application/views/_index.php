@@ -118,7 +118,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<?php
 					if($recent_blog['data'] === null){
 					?>
-					<h2><i>Belum ada konten, stay tuned.</i></h2>
+					<h3><i>Belum ada konten, stay tuned guys ;)</i></h3>
 					<?php
 					}
 					else{
@@ -156,7 +156,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<?php
 					if($all_blogs['data'] === null){
 					?>
-					<h2><i>Belum ada konten, stay tuned.</i></h2>
+					<h3><i>Belum ada konten, stay tuned guys ;)</i></h3>
 					<?php
 					}
 					else{
