@@ -10,6 +10,14 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('index');
+		$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Posts?view=recent";
+		$content = $this->api->callAPI("GET", $url);
+		$data['recent_blog'] = json_decode($content, true);
+
+		$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Posts?view=all";
+		$content = $this->api->callAPI("GET", $url);
+		$data['all_blogs'] = json_decode($content, true);
+
+		$this->load->view('index', $data);
 	}
 }
