@@ -132,7 +132,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<p class="card-text">
 									<?php echo $recent_blog['data'][0]['post_description']; ?>
 								</p>
-								<a href="#0" class="card-link">Baca lebih lanjut...</a>
+								<a href="<?php echo site_url('Home/view?post='. $recent_blog['data'][0]['post_id']); ?>" class="card-link">Baca lebih lanjut...</a>
 							</div>
 							<div class="card-footer text-muted">
 								<?php echo date("d F Y", strtotime($recent_blog['data'][0]['post_date'])) . ', jam ' . date("H:i", strtotime($recent_blog['data'][0]['post_date'])); ?>
@@ -146,6 +146,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			</div>
 		</div>
 		<!-- End of recent blog -->
+		
 
 		<!-- All blogs -->
 		<div class="container allBlogs">
@@ -172,7 +173,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<p class="card-text">
 									<?php echo $content['post_description']; ?>
 								</p>
-								<a href="#0" class="card-link">Baca lebih lanjut...</a>
+								<a href="<?php echo site_url('Home/view?post='. $content['post_id']); ?>" class="card-link">Baca lebih lanjut...</a>
 							</div>
 							<div class="card-footer text-muted">
 								<?php echo date("d F Y", strtotime($content['post_date'])) . ', jam ' . date("H:i", strtotime($content['post_date'])); ?>
