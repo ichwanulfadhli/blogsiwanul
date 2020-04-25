@@ -188,7 +188,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 				<!-- Pagination -->
 				<?php
-				if(count($all_blogs['data']) > 6){
+				if($all_blogs['data'] !== null && count($all_blogs['data']) > 6){
 				?>
 				<nav aria-label="Page navigation">
 					<ul class="pagination justify-content-center mt-5">
