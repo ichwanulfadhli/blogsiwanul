@@ -55,20 +55,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<a href="<?php echo site_url('Home'); ?>" class="nav-link" style="color: white;">
 				<i class="material-icons" style="font-size: 28px;">keyboard_backspace</i>
 			</a>
-			<!-- <div class="navbar-translate">
-				<a href="<?php echo site_url('Home'); ?>">
-					<i class="material-icons" style="font-size: 28px;">keyboard_backspace</i>
-				</a>
-			</div>
-			<div class="navbar-collapse">
-				<ul class="navbar-nav justify-content-md-start">
-					<li class="nav-item">
-						<a href="<?php echo site_url('Home'); ?>" class="nav-link" id="recentBlog">
-							<i class="material-icons" style="font-size: 28px;">keyboard_backspace</i>
-						</a>
-					</li>
-				</ul>
-			</div> -->
 		</div>
 	</nav>
 	<!-- End of navigation panel -->
@@ -79,11 +65,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<div class="page-header header-filter" id="background" data-parallax="true">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 ml-auto mr-auto">
+				<div class="col-md-8 ml-auto mr-auto mt-5">
 					<div class="brand text-center">
-						<!-- <h1>Your title here</h1> -->
-						<img width="80%" class="mylogo" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png'); ?>">
-						<h3 class="title text-center">- Welcome to My Blog -</h3>
+						<h1 class="title"><i><?php echo $blog['data'][0]['post_title']; ?></i></h1>
+						<h5><?php echo $blog['data'][0]['genre_id']; ?></h5>
+						<h5><?php echo date("d F Y", strtotime($blog['data'][0]['post_date'])) . ', jam ' . date("H:i", strtotime($blog['data'][0]['post_date'])); ?></h5>
+						<a href="javascript:void(0)" class="scroll-to" id="blog">
+							<img class="scroll-down-img" src="<?php echo base_url('assets/img/scroll-down.gif'); ?>" alt="Scroll down">
+						</a>
 					</div>
 				</div>
 			</div>
@@ -100,25 +89,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<!-- End of scroll to top button -->
 
 
-		<!-- Recent blog -->
-		<div class="container recentBlog">
+		<!-- Blog -->
+		<div class="container blog">
 			<div class="section text-center">
-				<?php
-				if ($blog['data'] === null) {
-					?>
-					<h3><i>Belum ada konten, stay tuned guys ; )</i></h3>
-				<?php
-				} else {
-					?>
-					<h2 class="title"><?php echo $blog['data'][0]['post_title']; ?></h2>
-					<div class="row justify-content-md-center">
-						<p class="card-text">
-							<?php echo $blog['data'][0]['post_description']; ?>
-						</p>
+				<div class="row">
+					<div class="col-md-8 ml-auto mr-auto">
+						<h2 class="text-center title"><?php echo $blog['data'][0]['post_title']; ?></h2>
+						<div class="text-left description" style="font-size: 16px;">
+							<?php echo $blog['data'][0]['post_content']; ?>
+						</div>
 					</div>
-				<?php
-				}
-				?>
+				</div>
 			</div>
 		</div>
 		<!-- End of recent blog -->

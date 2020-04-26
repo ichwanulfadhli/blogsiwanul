@@ -19116,4 +19116,22 @@ footer .pull-center {
   position:fixed;
   z-index: 9999999999999;
 }
+
+.scroll-down-img{
+  display: block;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+}
+
+@media only screen and (max-width: 500px){
+  .scroll-down-img{
+    display: block;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+  }
+}
 /*# sourceMappingURL=kit-free.css.map */
