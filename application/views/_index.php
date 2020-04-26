@@ -91,7 +91,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="row">
 				<div class="col-md-8 ml-auto mr-auto">
 					<div class="brand text-center">
-						<img width="80%" class="mylogo" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png'); ?>" alt="Logo Blog si WANUL">
+						<img width="80%" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png'); ?>" alt="Logo Blog si WANUL">
 						<h3 class="title text-center">- Welcome to My Blog -</h3>
 					</div>
 				</div>
@@ -124,10 +124,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					?>
 					<div class="col-md-7">
 						<div class="card">
-							<img class="card-img-top" src="http://localhost:85/blogsiwanul_project/blogsiwanul_backend/uploads/post_covers/<?php echo $recent_blog['data'][0]['post_cover']; ?>" alt="Blog cover">
+							<img class="card-img-top" src="http://192.168.100.8:85/blogsiwanul_project/blogsiwanul_backend/uploads/post_covers/<?php echo $recent_blog['data'][0]['post_cover']; ?>" alt="Blog cover">
 							<div class="card-body text-left">
 								<h4 class="card-title"><?php echo $recent_blog['data'][0]['post_title']; ?></h4>
-								<h6 class="card-subtitle mb-2 text-muted">Sub judul</h6>
+								<h6 class="card-subtitle mb-2 text-muted"><?php echo $recent_blog['data'][0]['genre_name']; ?></h6>
 								<p class="card-text">
 									<?php echo $recent_blog['data'][0]['post_description']; ?>
 								</p>
@@ -164,11 +164,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="col-md-5">
 						<div class="card">
 							<img class="card-img-top"
-								src="http://localhost:85/blogsiwanul_project/blogsiwanul_backend/uploads/post_covers/<?php echo $content['post_cover']; ?>"
+								src="http://192.168.100.8:85/blogsiwanul_project/blogsiwanul_backend/uploads/post_covers/<?php echo $content['post_cover']; ?>"
 								alt="Blog cover">
 							<div class="card-body text-left">
 								<h4 class="card-title"><?php echo $content['post_title']; ?></h4>
-								<h6 class="card-subtitle mb-2 text-muted">Sub judul</h6>
+								<h6 class="card-subtitle mb-2 text-muted"><?php echo $content['genre_name']; ?></h6>
 								<p class="card-text">
 									<?php echo $content['post_description']; ?>
 								</p>
@@ -368,7 +368,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			// Scrolling animation
 			$("html, body").animate({
 				scrollTop: 0
-			}, 1000);
+			}, 500);
 		});
 	</script>
 	<!-- End of control center -->

@@ -52,7 +52,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- Navigation panel -->
 	<nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
 		<div class="container">
-			<a href="<?php echo site_url('Home'); ?>" class="nav-link" style="color: white;">
+			<a href="<?php echo site_url('Home'); ?>" class="nav-link" style="color: white;" data-toggle="tooltip" data-placement="right" title="Kembali" data-container="body">
 				<i class="material-icons" style="font-size: 28px;">keyboard_backspace</i>
 			</a>
 		</div>
@@ -62,13 +62,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<!-- Content -->
 	<!-- Landing content -->
-	<div class="page-header header-filter" id="background" data-parallax="true">
+	<div class="page-header header-filter" id="background" data-parallax="true" style="background-image: url(http://192.168.100.8:85/blogsiwanul_project/blogsiwanul_backend/uploads/post_covers/<?php echo $blog['data'][0]['post_cover']; ?>);">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 ml-auto mr-auto mt-5">
 					<div class="brand text-center">
+						<img width="40%" style="margin-bottom: -3.5%;" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png'); ?>" alt="Logo Blog si WANUL">
 						<h1 class="title"><i><?php echo $blog['data'][0]['post_title']; ?></i></h1>
-						<h5><?php echo $blog['data'][0]['genre_id']; ?></h5>
+						<h5 style="margin: -2% 0;"><?php echo $blog['data'][0]['genre_name']; ?></h5>
 						<h5><?php echo date("d F Y", strtotime($blog['data'][0]['post_date'])) . ', jam ' . date("H:i", strtotime($blog['data'][0]['post_date'])); ?></h5>
 						<a href="javascript:void(0)" class="scroll-to" id="blog">
 							<img class="scroll-down-img" src="<?php echo base_url('assets/img/scroll-down.gif'); ?>" alt="Scroll down">
@@ -169,29 +170,29 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<script src="<?php echo base_url('assets/js/material-kit.js'); ?>" type="text/javascript"></script>
 	<script>
 		// Function to load random image
-		function randomBackground() {
-			// List of images
-			var images = [
-				'background-1.jpg',
-				'background-2.jpg',
-				'background-3.jpg',
-				'background-4.jpg',
-				'background-5.jpg',
-				'background-6.jpg',
-			];
+		// function randomBackground() {
+		// 	// List of images
+		// 	var images = [
+		// 		'background-1.jpg',
+		// 		'background-2.jpg',
+		// 		'background-3.jpg',
+		// 		'background-4.jpg',
+		// 		'background-5.jpg',
+		// 		'background-6.jpg',
+		// 	];
 
-			// Full path
-			var url = "<?php echo base_url('assets/img/'); ?>";
-			// The image result
-			var output = images[Math.floor(Math.random() * images.length)];
+		// 	// Full path
+		// 	var url = "<?php echo base_url('assets/img/'); ?>";
+		// 	// The image result
+		// 	var output = images[Math.floor(Math.random() * images.length)];
 
-			// Returning output
-			return url + output;
+		// 	// Returning output
+		// 	return url + output;
 
-		}
+		// }
 
-		// Displaying random background image on page load
-		window.onload = document.getElementById("background").style.backgroundImage = "url(" + randomBackground(1, 6) + ")";
+		// // Displaying random background image on page load
+		// window.onload = document.getElementById("background").style.backgroundImage = "url(" + randomBackground(1, 6) + ")";
 
 		$(document).ready(function() {
 			//init DateTimePickers
@@ -209,7 +210,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				if ($('.' + section).length != 0) {
 					$("html, body").animate({
 						scrollTop: $('.' + section).offset().top
-					}, 'slow');
+					}, 500);
 				}
 			});
 		});
@@ -230,7 +231,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			// Scrolling animation
 			$("html, body").animate({
 				scrollTop: 0
-			}, 1000);
+			}, 500);
 		});
 	</script>
 	<!-- End of control center -->
