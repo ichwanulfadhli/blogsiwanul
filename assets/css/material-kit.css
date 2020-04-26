@@ -19119,7 +19119,6 @@ footer .pull-center {
 
 .scroll-down-img{
   display: block;
-  margin-top: 10%;
   margin-left: auto;
   margin-right: auto;
   width: 15%;
@@ -19128,7 +19127,6 @@ footer .pull-center {
 @media only screen and (max-width: 500px){
   .scroll-down-img{
     display: block;
-    margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
     width: 30%;
