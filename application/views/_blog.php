@@ -62,7 +62,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<!-- Content -->
 	<!-- Landing content -->
-	<div class="page-header header-filter" id="background" data-parallax="true" style="background-image: url(http://192.168.100.8:85/blogsiwanul_project/blogsiwanul_backend/uploads/post_covers/<?php echo $blog['data'][0]['post_cover']; ?>);">
+	<div class="page-header header-filter" id="background" data-parallax="true" style="background-image: url(<?php echo $blog['data'][0]['post_cover']; ?>);">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 ml-auto mr-auto mt-5">
