@@ -144,11 +144,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<img class="card-img-top" src="<?php echo $recent_blog['data'][0]['post_cover']; ?>" alt="Blog cover">
 							<div class="card-body text-left">
 								<h4 class="card-title"><?php echo $recent_blog['data'][0]['post_title']; ?></h4>
-								<h6 class="card-subtitle mb-2 text-muted"><?php echo $recent_blog['data'][0]['genre_name']; ?></h6>
 								<p class="card-text">
 									<?php echo $recent_blog['data'][0]['post_description']; ?>
 								</p>
-								<a href="<?php echo site_url('Home/view?post='. $recent_blog['data'][0]['post_id']); ?>" class="card-link">Baca lebih lanjut...</a>
+								<a href="<?php echo site_url('Blog/view/'. date("Y", strtotime($recent_blog['data'][0]['post_date'])). '/'. date("m", strtotime($recent_blog['data'][0]['post_date'])). '/'. date("d", strtotime($recent_blog['data'][0]['post_date']))); ?>" class="card-link">Baca lebih lanjut...</a>
 							</div>
 							<div class="card-footer text-muted">
 								<?php echo date("d F Y", strtotime($recent_blog['data'][0]['post_date'])) . ', jam ' . date("H:i", strtotime($recent_blog['data'][0]['post_date'])); ?>
@@ -184,11 +183,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								alt="Blog cover">
 							<div class="card-body text-left">
 								<h4 class="card-title"><?php echo $content['post_title']; ?></h4>
-								<h6 class="card-subtitle mb-2 text-muted"><?php echo $content['genre_name']; ?></h6>
 								<p class="card-text">
 									<?php echo $content['post_description']; ?>
 								</p>
-								<a href="<?php echo site_url('Home/view?post='. $content['post_id']); ?>" class="card-link">Baca lebih lanjut...</a>
+								<a href="<?php echo site_url('Blog/view/'. date("Y", strtotime($content['post_date'])). '/'. date("m", strtotime($content['post_date'])). '/'. date("d", strtotime($content['post_date']))); ?>" class="card-link">Baca lebih lanjut...</a>
 							</div>
 							<div class="card-footer text-muted">
 								<?php echo date("d F Y", strtotime($content['post_date'])) . ', jam ' . date("H:i", strtotime($content['post_date'])); ?>
@@ -306,13 +304,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- Plugin for the Datepicker -->
 	<script src="<?php echo base_url('assets/js/plugins/bootstrap-datetimepicker.js'); ?>" type="text/javascript"></script>
 	<!-- End of plugin for the datepicker -->
-
-
-	<!-- Bug tooltip karna jQuery-UI -->
-	<!-- jQuery UI Plugin -->
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
-	<!-- End if jQuery UI plugin -->
-
+	
 
 	<!-- Plugin for the sliders -->
 	<script src="<?php echo base_url('assets/js/plugins/nouislider.min.js'); ?>" type="text/javascript"></script>

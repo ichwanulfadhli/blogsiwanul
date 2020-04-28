@@ -69,7 +69,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="brand text-center">
 						<img width="40%" style="margin-bottom: -3.5%;" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png'); ?>" alt="Logo Blog si WANUL">
 						<h1 class="title"><i><?php echo $blog['data'][0]['post_title']; ?></i></h1>
-						<h5 style="margin: -2% 0;"><?php echo $blog['data'][0]['genre_name']; ?></h5>
 						<h5><?php echo date("d F Y", strtotime($blog['data'][0]['post_date'])) . ', jam ' . date("H:i", strtotime($blog['data'][0]['post_date'])); ?></h5>
 						<a href="javascript:void(0)" class="scroll-to" id="blog">
 							<img class="scroll-down-img" src="<?php echo base_url('assets/img/scroll-down.gif'); ?>" alt="Scroll down">
@@ -155,12 +154,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- End of plugin for the datepicker -->
 
 
-	<!-- Bug tooltip karna jQuery-UI -->
-	<!-- jQuery UI Plugin -->
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
-	<!-- End if jQuery UI plugin -->
-
-
 	<!-- Plugin for the sliders -->
 	<script src="<?php echo base_url('assets/js/plugins/nouislider.min.js'); ?>" type="text/javascript"></script>
 	<!-- End of plugin for the sliders -->
@@ -169,31 +162,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- Control center -->
 	<script src="<?php echo base_url('assets/js/material-kit.js'); ?>" type="text/javascript"></script>
 	<script>
-		// Function to load random image
-		// function randomBackground() {
-		// 	// List of images
-		// 	var images = [
-		// 		'background-1.jpg',
-		// 		'background-2.jpg',
-		// 		'background-3.jpg',
-		// 		'background-4.jpg',
-		// 		'background-5.jpg',
-		// 		'background-6.jpg',
-		// 	];
-
-		// 	// Full path
-		// 	var url = "<?php echo base_url('assets/img/'); ?>";
-		// 	// The image result
-		// 	var output = images[Math.floor(Math.random() * images.length)];
-
-		// 	// Returning output
-		// 	return url + output;
-
-		// }
-
-		// // Displaying random background image on page load
-		// window.onload = document.getElementById("background").style.backgroundImage = "url(" + randomBackground(1, 6) + ")";
-
 		$(document).ready(function() {
 			//init DateTimePickers
 			materialKit.initFormExtendedDatetimepickers();
