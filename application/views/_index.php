@@ -9,6 +9,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+	
+	<meta name="description" content="<?php echo $description; ?>">
+    <meta name="keywords" content="<?php echo $keywords; ?>">
+    <meta name="robot" content="index,follow">
+    <meta name="language" content="indonesia">
+    <meta name="author" content="Ichwanul Fadhli">
 	<!-- End of meta tags -->
 
 
@@ -34,6 +40,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- CSS Files -->
 	<link href="<?php echo base_url('assets/css/material-kit.css'); ?>" rel="stylesheet" />
 	<!-- End of CSS files -->
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161399100-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      gtag('config', 'UA-161399100-2');
+    </script>
+	<!-- End of Global site tag Google Analytics -->
 
 
 	<!-- 
@@ -232,7 +249,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								document.write(new Date().getFullYear() - 1999 + " tahun");
 							</script>) asal Bogor yang hobi mendengarkan musik, dan melakukan <i>coding</i>. Dia dulu berkeinginan untuk menjadi seorang <i>Game Developer</i>,
 							namun hanya saja mimpinya tidak kesampaian. Sejak saat itu dia memutuskan untuk menjadi seorang <i>Programmer</i>. Dia belajar dan terus belajar supaya
-							dia bisa menggapai cita-citanya. Saat ini dia sedang berkuliah di STIKOM Binaniaga Bogor dengan jurusan Teknik Informatika dan juga dia sedang berkuliah di
+							dia bisa menggapai cita-citanya. Saat ini dia sedang berkuliah di STIKOM Binaniaga Bogor dengan jurusan Teknik Informatika dan juga dia sedang ada di
 							tingkat 6 (Semester 6).
 						</h4>
 					</div>
