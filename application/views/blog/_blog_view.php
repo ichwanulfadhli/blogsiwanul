@@ -26,7 +26,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<!-- Title -->
 	<title>
-		<?php echo $blog['data'][0]['post_title']; ?> - Blog si WANUL
+		<?php echo $blog['data'][0]['post_title']; ?> | Blog si WANUL
 	</title>
 	<!-- End of title -->
 
@@ -72,7 +72,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- Navigation panel -->
 	<nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
 		<div class="container">
-			<a href="<?php echo site_url('Home'); ?>" class="nav-link" style="color: white;" data-toggle="tooltip" data-placement="right" title="Kembali" data-container="body">
+			<a href="javascript:void(0)" class="nav-link back" style="color: white;" data-toggle="tooltip" data-placement="right" title="Kembali" data-container="body">
 				<i class="material-icons" style="font-size: 28px;">keyboard_backspace</i>
 			</a>
 		</div>
@@ -89,7 +89,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="brand text-center">
 						<img width="40%" style="margin-bottom: -3.5%;" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png'); ?>" alt="Logo Blog si WANUL">
 						<h1 class="title"><i><?php echo $blog['data'][0]['post_title']; ?></i></h1>
-						<h5><?php echo date("d F Y", strtotime($blog['data'][0]['post_date'])) . ', jam ' . date("H:i", strtotime($blog['data'][0]['post_date'])); ?></h5>
+						<h4><?php echo date("d F Y", strtotime($blog['data'][0]['post_date'])); ?></h4>
 						<a href="javascript:void(0)" class="scroll-to" id="blog">
 							<img class="scroll-down-img" src="<?php echo base_url('assets/img/scroll-down.gif'); ?>" alt="Scroll down">
 						</a>
@@ -220,6 +220,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			$("html, body").animate({
 				scrollTop: 0
 			}, 500);
+		});
+
+		$(".back").click(function() {
+			history.back();
 		});
 	</script>
 	<!-- End of control center -->
