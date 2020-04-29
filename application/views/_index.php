@@ -9,12 +9,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	
+
 	<meta name="description" content="<?php echo $description; ?>">
-    <meta name="keywords" content="<?php echo $keywords; ?>">
-    <meta name="robot" content="index,follow">
-    <meta name="language" content="indonesia">
-    <meta name="author" content="Ichwanul Fadhli">
+	<meta name="keywords" content="<?php echo $keywords; ?>">
+	<meta name="robot" content="index,follow">
+	<meta name="language" content="indonesia">
+	<meta name="author" content="Ichwanul Fadhli">
 	<!-- End of meta tags -->
 
 
@@ -42,14 +42,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- End of CSS files -->
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161399100-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      
-      gtag('config', 'UA-161399100-2');
-    </script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161399100-3"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-161399100-3');
+	</script>
 	<!-- End of Global site tag Google Analytics -->
 
 
@@ -132,28 +135,27 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<h2 class="title">Blog Terbaru</h2>
 				<div class="row justify-content-md-center">
 					<?php
-					if($recent_blog['data'] === null){
-					?>
-					<h3 class="px-5"><i>Belum ada konten, stay tuned guys ; )</i></h3>
+					if ($recent_blog['data'] === null) {
+						?>
+						<h3 class="px-5"><i>Belum ada konten, stay tuned guys ; )</i></h3>
 					<?php
-					}
-					else{
-					?>
-					<div class="col-md-7">
-						<div class="card">
-							<img class="card-img-top" src="<?php echo $recent_blog['data'][0]['post_cover']; ?>" alt="Blog cover">
-							<div class="card-body text-left">
-								<h4 class="card-title"><?php echo $recent_blog['data'][0]['post_title']; ?></h4>
-								<p class="card-text">
-									<?php echo $recent_blog['data'][0]['post_description']; ?>
-								</p>
-								<a href="<?php echo site_url('Blog/view/'. date("Y", strtotime($recent_blog['data'][0]['post_date'])). '/'. date("m", strtotime($recent_blog['data'][0]['post_date'])). '/'. date("d", strtotime($recent_blog['data'][0]['post_date']))); ?>" class="card-link">Baca lebih lanjut...</a>
-							</div>
-							<div class="card-footer text-muted">
-								<?php echo date("d F Y", strtotime($recent_blog['data'][0]['post_date'])) . ', jam ' . date("H:i", strtotime($recent_blog['data'][0]['post_date'])); ?>
+					} else {
+						?>
+						<div class="col-md-7">
+							<div class="card">
+								<img class="card-img-top" src="<?php echo $recent_blog['data'][0]['post_cover']; ?>" alt="Blog cover">
+								<div class="card-body text-left">
+									<h4 class="card-title"><?php echo $recent_blog['data'][0]['post_title']; ?></h4>
+									<p class="card-text">
+										<?php echo $recent_blog['data'][0]['post_description']; ?>
+									</p>
+									<a href="<?php echo site_url('Blog/view/' . date("Y", strtotime($recent_blog['data'][0]['post_date'])) . '/' . date("m", strtotime($recent_blog['data'][0]['post_date'])) . '/' . date("d", strtotime($recent_blog['data'][0]['post_date']))); ?>" class="card-link">Baca lebih lanjut...</a>
+								</div>
+								<div class="card-footer text-muted">
+									<?php echo date("d F Y", strtotime($recent_blog['data'][0]['post_date'])) . ', jam ' . date("H:i", strtotime($recent_blog['data'][0]['post_date'])); ?>
+								</div>
 							</div>
 						</div>
-					</div>
 					<?php
 					}
 					?>
@@ -161,7 +163,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			</div>
 		</div>
 		<!-- End of recent blog -->
-		
+
 
 		<!-- All blogs -->
 		<div class="container allBlogs">
@@ -169,30 +171,28 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<h2 class="title">Kumpulan Blog</h2>
 				<div class="row justify-content-md-center">
 					<?php
-					if($all_blogs['data'] === null){
-					?>
-					<h3 class="px-5"><i>Belum ada konten, stay tuned guys ; )</i></h3>
-					<?php
-					}
-					else{
-						foreach($all_blogs['data'] as $content){
-					?>
-					<div class="col-md-5">
-						<div class="card">
-							<img class="card-img-top" src="<?php echo $content['post_cover']; ?>"
-								alt="Blog cover">
-							<div class="card-body text-left">
-								<h4 class="card-title"><?php echo $content['post_title']; ?></h4>
-								<p class="card-text">
-									<?php echo $content['post_description']; ?>
-								</p>
-								<a href="<?php echo site_url('Blog/view/'. date("Y", strtotime($content['post_date'])). '/'. date("m", strtotime($content['post_date'])). '/'. date("d", strtotime($content['post_date']))); ?>" class="card-link">Baca lebih lanjut...</a>
+					if ($all_blogs['data'] === null) {
+						?>
+						<h3 class="px-5"><i>Belum ada konten, stay tuned guys ; )</i></h3>
+						<?php
+						} else {
+							foreach ($all_blogs['data'] as $content) {
+								?>
+							<div class="col-md-5">
+								<div class="card">
+									<img class="card-img-top" src="<?php echo $content['post_cover']; ?>" alt="Blog cover">
+									<div class="card-body text-left">
+										<h4 class="card-title"><?php echo $content['post_title']; ?></h4>
+										<p class="card-text">
+											<?php echo $content['post_description']; ?>
+										</p>
+										<a href="<?php echo site_url('Blog/view/' . date("Y", strtotime($content['post_date'])) . '/' . date("m", strtotime($content['post_date'])) . '/' . date("d", strtotime($content['post_date']))); ?>" class="card-link">Baca lebih lanjut...</a>
+									</div>
+									<div class="card-footer text-muted">
+										<?php echo date("d F Y", strtotime($content['post_date'])) . ', jam ' . date("H:i", strtotime($content['post_date'])); ?>
+									</div>
+								</div>
 							</div>
-							<div class="card-footer text-muted">
-								<?php echo date("d F Y", strtotime($content['post_date'])) . ', jam ' . date("H:i", strtotime($content['post_date'])); ?>
-							</div>
-						</div>
-					</div>
 					<?php
 						}
 					}
@@ -202,27 +202,27 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 				<!-- Pagination -->
 				<?php
-				if($all_blogs['data'] !== null && count($all_blogs['data']) > 6){
-				?>
-				<nav aria-label="Page navigation">
-					<ul class="pagination justify-content-center mt-5">
-						<li class="page-item">
-							<a class="page-link" href="javascript:;" tabindex="-1">Sebelumnya</a>
-						</li>
-						<li class="page-item active">
-							<a class="page-link" href="javascript:;">1 <span class="sr-only">(current)</span></a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="javascript:;">2</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="javascript:;">3</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="javascript:;">Selanjutnya</a>
-						</li>
-					</ul>
-				</nav>
+				if ($all_blogs['data'] !== null && count($all_blogs['data']) > 6) {
+					?>
+					<nav aria-label="Page navigation">
+						<ul class="pagination justify-content-center mt-5">
+							<li class="page-item">
+								<a class="page-link" href="javascript:;" tabindex="-1">Sebelumnya</a>
+							</li>
+							<li class="page-item active">
+								<a class="page-link" href="javascript:;">1 <span class="sr-only">(current)</span></a>
+							</li>
+							<li class="page-item">
+								<a class="page-link" href="javascript:;">2</a>
+							</li>
+							<li class="page-item">
+								<a class="page-link" href="javascript:;">3</a>
+							</li>
+							<li class="page-item">
+								<a class="page-link" href="javascript:;">Selanjutnya</a>
+							</li>
+						</ul>
+					</nav>
 				<?php
 				}
 				?>
@@ -304,7 +304,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- Plugin for the Datepicker -->
 	<script src="<?php echo base_url('assets/js/plugins/bootstrap-datetimepicker.js'); ?>" type="text/javascript"></script>
 	<!-- End of plugin for the datepicker -->
-	
+
 
 	<!-- Plugin for the sliders -->
 	<script src="<?php echo base_url('assets/js/plugins/nouislider.min.js'); ?>" type="text/javascript"></script>
