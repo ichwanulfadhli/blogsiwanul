@@ -26,7 +26,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<!-- Title -->
 	<title>
-		Blog si WANUL
+		Blog si WANUL | Home
 	</title>
 	<!-- End of title -->
 
@@ -82,18 +82,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">
-						<a href="javascript:void(0)" class="nav-link scroll-to" id="recentBlog">
-							<i class="material-icons">bookmark</i> Blog Terbaru
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="material-icons">bookmarks</i> Blog
 						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item scroll-to" id="recentBlog" href="#recentBlog">Blog Terbaru</a>
+							<a class="dropdown-item" href="<?php echo site_url('Blog'); ?>">Kumpulan Blog</a>
+						</div>
 					</li>
 					<li class="nav-item">
-						<a href="javascript:void(0)" class="nav-link scroll-to" id="allBlogs">
-							<i class="material-icons">bookmarks</i> Kumpulan Blog
-						</a>
-					</li>
-					<li class="nav-item">
-						<a href="javascript:void(0)" class="nav-link scroll-to" id="aboutMe">
+						<a href="#aboutMe" class="nav-link scroll-to" id="aboutMe">
 							<i class="material-icons">person</i> Tentang Saya
 						</a>
 					</li>
@@ -135,104 +134,38 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<h2 class="title">Blog Terbaru</h2>
 				<div class="row justify-content-md-center">
 					<?php
-					if ($recent_blog['data'] === null) {
+					if($recent_blog['data'] === null){
 						?>
 						<h3 class="px-5"><i>Belum ada konten, stay tuned guys ; )</i></h3>
 					<?php
-					} else {
+					}
+					else{
+						foreach($recent_blog['data'] as $data){
 						?>
 						<div class="col-md-7">
 							<div class="card">
-								<img class="card-img-top" src="<?php echo $recent_blog['data'][0]['post_cover']; ?>" alt="Blog cover">
+								<img class="card-img-top" src="<?php echo $data['post_cover']; ?>" alt="Blog cover">
 								<div class="card-body text-left">
-									<h4 class="card-title"><?php echo $recent_blog['data'][0]['post_title']; ?></h4>
+									<h4 class="card-title"><?php echo $data['post_title']; ?></h4>
 									<p class="card-text">
-										<?php echo $recent_blog['data'][0]['post_description']; ?>
+										<?php echo $data['post_description']; ?>
 									</p>
-									<a href="<?php echo site_url('Blog/view/' . date("Y", strtotime($recent_blog['data'][0]['post_date'])) . '/' . date("m", strtotime($recent_blog['data'][0]['post_date'])) . '/' . date("d", strtotime($recent_blog['data'][0]['post_date']))); ?>" class="card-link">Baca lebih lanjut...</a>
+									<a href="<?php echo site_url('Blog/view/' . date("Y", strtotime($data['post_date'])) . '/' . date("m", strtotime($data['post_date'])) . '/' . date("d", strtotime($data['post_date']))); ?>" class="card-link">Baca lebih lanjut...</a>
 								</div>
 								<div class="card-footer text-muted">
-									<?php echo date("d F Y", strtotime($recent_blog['data'][0]['post_date'])) . ', jam ' . date("H:i", strtotime($recent_blog['data'][0]['post_date'])); ?>
+									<?php echo date("d F Y", strtotime($data['post_date'])) . ', jam ' . date("H:i", strtotime($data['post_date'])); ?>
 								</div>
 							</div>
 						</div>
 					<?php
+						}
 					}
 					?>
 				</div>
 			</div>
 		</div>
 		<!-- End of recent blog -->
-
-
-		<!-- All blogs -->
-		<div class="container allBlogs">
-			<div class="section text-center">
-				<h2 class="title">Kumpulan Blog</h2>
-				<div class="row justify-content-md-center">
-					<?php
-					if ($all_blogs['data'] === null) {
-						?>
-						<h3 class="px-5"><i>Belum ada konten, stay tuned guys ; )</i></h3>
-						<?php
-						} else {
-							foreach ($all_blogs['data'] as $content) {
-								?>
-							<div class="col-md-5">
-								<div class="card">
-									<img class="card-img-top" src="<?php echo $content['post_cover']; ?>" alt="Blog cover">
-									<div class="card-body text-left">
-										<h4 class="card-title"><?php echo $content['post_title']; ?></h4>
-										<p class="card-text">
-											<?php echo $content['post_description']; ?>
-										</p>
-										<a href="<?php echo site_url('Blog/view/' . date("Y", strtotime($content['post_date'])) . '/' . date("m", strtotime($content['post_date'])) . '/' . date("d", strtotime($content['post_date']))); ?>" class="card-link">Baca lebih lanjut...</a>
-									</div>
-									<div class="card-footer text-muted">
-										<?php echo date("d F Y", strtotime($content['post_date'])) . ', jam ' . date("H:i", strtotime($content['post_date'])); ?>
-									</div>
-								</div>
-							</div>
-					<?php
-						}
-					}
-					?>
-				</div>
-
-
-				<!-- Pagination -->
-				<?php
-				if ($all_blogs['data'] !== null && count($all_blogs['data']) > 6) {
-					?>
-					<nav aria-label="Page navigation">
-						<ul class="pagination justify-content-center mt-5">
-							<li class="page-item">
-								<a class="page-link" href="javascript:;" tabindex="-1">Sebelumnya</a>
-							</li>
-							<li class="page-item active">
-								<a class="page-link" href="javascript:;">1 <span class="sr-only">(current)</span></a>
-							</li>
-							<li class="page-item">
-								<a class="page-link" href="javascript:;">2</a>
-							</li>
-							<li class="page-item">
-								<a class="page-link" href="javascript:;">3</a>
-							</li>
-							<li class="page-item">
-								<a class="page-link" href="javascript:;">Selanjutnya</a>
-							</li>
-						</ul>
-					</nav>
-				<?php
-				}
-				?>
-				<!-- End of pagination -->
-
-
-			</div>
-		</div>
-		<!-- End of all blogs -->
-
+		
 
 		<!-- About me -->
 		<div class="container aboutMe">
