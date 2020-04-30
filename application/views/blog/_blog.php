@@ -10,8 +10,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 
-	<!-- <meta name="description" content="<?php echo $blog['data'][0]['post_description']; ?>">
-	<meta name="keywords" content="<?php echo $blog['data'][0]['post_keywords']; ?>"> -->
+	<meta name="description" content="<?php echo $description; ?>">
+	<meta name="keywords" content="<?php echo $keywords; ?>">
 	<meta name="robot" content="index,follow">
 	<meta name="language" content="indonesia">
 	<meta name="author" content="Ichwanul Fadhli">
