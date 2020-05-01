@@ -200,7 +200,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				if ($('.' + section).length != 0) {
 					$("html, body").animate({
 						scrollTop: $('.' + section).offset().top
-					}, 500, 'easeInOutQuint');
+					}, 700, 'easeInOutQuint');
 				}
 			});
 		});
@@ -221,7 +221,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			// Scrolling animation
 			$("html, body").animate({
 				scrollTop: 0
-			}, 500, 'easeInOutQuint');
+			}, 700, 'easeInOutQuint');
 		});
 
 		$(".back").click(function() {
