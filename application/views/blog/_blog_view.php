@@ -9,6 +9,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+
+	<meta name="description" content="<?php echo $blog['data'][0]['post_description']; ?>">
+	<meta name="keywords" content="<?php echo $blog['data'][0]['post_keywords']; ?>">
+	<meta name="robot" content="index,follow">
+	<meta name="language" content="indonesia">
+	<meta name="author" content="Ichwanul Fadhli">
 	<!-- End of meta tags -->
 
 
@@ -20,7 +26,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<!-- Title -->
 	<title>
-		<?php echo $blog['data'][0]['post_title']; ?> - Blog si WANUL
+		<?php echo $blog['data'][0]['post_title']; ?> | Blog si WANUL
 	</title>
 	<!-- End of title -->
 
@@ -33,7 +39,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<!-- CSS Files -->
 	<link href="<?php echo base_url('assets/css/material-kit.css'); ?>" rel="stylesheet" />
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	<!-- End of CSS files -->
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161399100-3"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-161399100-3');
+	</script>
+	<!-- End of Global site tag Google Analytics -->
 
 
 	<!-- 
@@ -52,23 +73,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- Navigation panel -->
 	<nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
 		<div class="container">
-			<a href="<?php echo site_url('Home'); ?>" class="nav-link" style="color: white;">
+			<a href="javascript:void(0)" class="nav-link back" style="color: white;" data-toggle="tooltip" data-placement="right" title="Kembali" data-container="body">
 				<i class="material-icons" style="font-size: 28px;">keyboard_backspace</i>
 			</a>
-			<!-- <div class="navbar-translate">
-				<a href="<?php echo site_url('Home'); ?>">
-					<i class="material-icons" style="font-size: 28px;">keyboard_backspace</i>
-				</a>
-			</div>
-			<div class="navbar-collapse">
-				<ul class="navbar-nav justify-content-md-start">
-					<li class="nav-item">
-						<a href="<?php echo site_url('Home'); ?>" class="nav-link" id="recentBlog">
-							<i class="material-icons" style="font-size: 28px;">keyboard_backspace</i>
-						</a>
-					</li>
-				</ul>
-			</div> -->
 		</div>
 	</nav>
 	<!-- End of navigation panel -->
@@ -76,14 +83,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<!-- Content -->
 	<!-- Landing content -->
-	<div class="page-header header-filter" id="background" data-parallax="true">
+	<div class="page-header header-filter" id="background" data-parallax="true" style="background-image: url(<?php echo $blog['data'][0]['post_cover']; ?>);">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 ml-auto mr-auto">
+				<div class="col-md-8 ml-auto mr-auto mt-5">
 					<div class="brand text-center">
-						<!-- <h1>Your title here</h1> -->
-						<img width="80%" class="mylogo" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png'); ?>">
-						<h3 class="title text-center">- Welcome to My Blog -</h3>
+						<img width="40%" style="margin-bottom: -3.5%;" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png'); ?>" alt="Logo Blog si WANUL">
+						<h1 class="title"><i><?php echo $blog['data'][0]['post_title']; ?></i></h1>
+						<h4><?php echo date("d F Y", strtotime($blog['data'][0]['post_date'])); ?></h4>
+						<a href="javascript:void(0)" class="scroll-to" id="blog">
+							<img class="scroll-down-img" src="<?php echo base_url('assets/img/scroll-down.gif'); ?>" alt="Scroll down">
+						</a>
 					</div>
 				</div>
 			</div>
@@ -100,25 +110,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<!-- End of scroll to top button -->
 
 
-		<!-- Recent blog -->
-		<div class="container recentBlog">
+		<!-- Blog -->
+		<div class="container blog">
 			<div class="section text-center">
-				<?php
-				if ($blog['data'] === null) {
-					?>
-					<h3><i>Belum ada konten, stay tuned guys ; )</i></h3>
-				<?php
-				} else {
-					?>
-					<h2 class="title"><?php echo $blog['data'][0]['post_title']; ?></h2>
-					<div class="row justify-content-md-center">
-						<p class="card-text">
-							<?php echo $blog['data'][0]['post_description']; ?>
-						</p>
+				<div class="row">
+					<div class="col-md-8 ml-auto mr-auto">
+						<h2 class="text-center title"><?php echo $blog['data'][0]['post_title']; ?></h2>
+						<div class="text-left description" style="font-size: 16px;">
+							<?php echo $blog['data'][0]['post_content']; ?>
+						</div>
 					</div>
-				<?php
-				}
-				?>
+				</div>
 			</div>
 		</div>
 		<!-- End of recent blog -->
@@ -162,6 +164,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<!--   Core JS Files   -->
 	<script src="<?php echo base_url('assets/js/core/jquery.min.js'); ?>" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="<?php echo base_url('assets/js/core/popper.min.js'); ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js'); ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('assets/js/plugins/moment.min.js'); ?>"></script>
@@ -173,12 +176,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- End of plugin for the datepicker -->
 
 
-	<!-- Bug tooltip karna jQuery-UI -->
-	<!-- jQuery UI Plugin -->
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
-	<!-- End if jQuery UI plugin -->
-
-
 	<!-- Plugin for the sliders -->
 	<script src="<?php echo base_url('assets/js/plugins/nouislider.min.js'); ?>" type="text/javascript"></script>
 	<!-- End of plugin for the sliders -->
@@ -187,31 +184,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- Control center -->
 	<script src="<?php echo base_url('assets/js/material-kit.js'); ?>" type="text/javascript"></script>
 	<script>
-		// Function to load random image
-		function randomBackground() {
-			// List of images
-			var images = [
-				'background-1.jpg',
-				'background-2.jpg',
-				'background-3.jpg',
-				'background-4.jpg',
-				'background-5.jpg',
-				'background-6.jpg',
-			];
-
-			// Full path
-			var url = "<?php echo base_url('assets/img/'); ?>";
-			// The image result
-			var output = images[Math.floor(Math.random() * images.length)];
-
-			// Returning output
-			return url + output;
-
-		}
-
-		// Displaying random background image on page load
-		window.onload = document.getElementById("background").style.backgroundImage = "url(" + randomBackground(1, 6) + ")";
-
 		$(document).ready(function() {
 			//init DateTimePickers
 			materialKit.initFormExtendedDatetimepickers();
@@ -228,7 +200,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				if ($('.' + section).length != 0) {
 					$("html, body").animate({
 						scrollTop: $('.' + section).offset().top
-					}, 'slow');
+					}, 700, 'easeInOutQuint');
 				}
 			});
 		});
@@ -249,7 +221,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			// Scrolling animation
 			$("html, body").animate({
 				scrollTop: 0
-			}, 1000);
+			}, 700, 'easeInOutQuint');
+		});
+
+		$(".back").click(function() {
+			history.back();
 		});
 	</script>
 	<!-- End of control center -->
