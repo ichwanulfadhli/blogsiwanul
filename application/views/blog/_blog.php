@@ -108,23 +108,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		</button>
 		<!-- End of scroll to top button -->
 
-
-		<!-- Blog -->
-		<!-- <div class="container blog">
-			<div class="section text-center">
-				<div class="row">
-					<div class="col-md-8 ml-auto mr-auto">
-						<h2 class="text-center title"><?php echo $blog['data'][0]['post_title']; ?></h2>
-						<div class="text-left description" style="font-size: 16px;">
-							<?php echo $blog['data'][0]['post_content']; ?>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-		<!-- End of recent blog -->
-
-
+		
 		<!-- All blogs -->
 		<div class="container blog">
 			<div class="section text-center">
