@@ -39,6 +39,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<!-- CSS Files -->
 	<link href="<?php echo base_url('assets/css/material-kit.css'); ?>" rel="stylesheet" />
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	<!-- End of CSS files -->
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -231,6 +232,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<!--   Core JS Files   -->
 	<script src="<?php echo base_url('assets/js/core/jquery.min.js'); ?>" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="<?php echo base_url('assets/js/core/popper.min.js'); ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js'); ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('assets/js/plugins/moment.min.js'); ?>"></script>
@@ -291,7 +293,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				if ($('.' + section).length != 0) {
 					$("html, body").animate({
 						scrollTop: $('.' + section).offset().top
-					}, 500);
+					}, 500, 'easeInOutQuint');
 				}
 			});
 		});
@@ -312,7 +314,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			// Scrolling animation
 			$("html, body").animate({
 				scrollTop: 0
-			}, 500);
+			}, 500, 'easeInOutQuint');
 		});
 
 		$(".back").click(function() {
