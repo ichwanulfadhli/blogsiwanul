@@ -302,7 +302,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		});
 
 		$(".back").click(function() {
-			history.back();
+			if(document.referrer == ''){
+				window.location.href = "<?php echo site_url(); ?>";
+			}
+			else{
+				history.back();
+			}
 		});
 	</script>
 	<!-- End of control center -->
