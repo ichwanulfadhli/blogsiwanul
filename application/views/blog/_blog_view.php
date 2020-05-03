@@ -116,7 +116,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="row">
 					<div class="col-md-8 ml-auto mr-auto">
 						<h2 class="text-center title"><?php echo $blog['data'][0]['post_title']; ?></h2>
-						<div class="text-left description" style="font-size: 16px;">
+						<div class="text-left description">
 							<?php echo $blog['data'][0]['post_content']; ?>
 						</div>
 					</div>
