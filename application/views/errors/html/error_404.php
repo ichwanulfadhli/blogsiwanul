@@ -16,8 +16,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 	<!-- Icon -->
-	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.png'); ?>'">
-	<link rel="icon" type="image/png" href="<?php echo base_url('assets/img/favicon.png'); ?>">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo config_item('base_url'); ?>assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" href="<?php echo config_item('base_url'); ?>assets/img/favicon.png">
 	<!-- End of icon -->
 
 
@@ -35,7 +35,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 	<!-- CSS Files -->
-	<link href="<?php echo base_url('assets/css/material-kit.css'); ?>" rel="stylesheet" />
+	<link href="<?php echo config_item('base_url'); ?>assets/css/material-kit.css" rel="stylesheet" />
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	<!-- End of CSS files -->
 
@@ -71,7 +71,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="row">
 				<div class="col-md-8 ml-auto mr-auto mt-5">
 					<div class="brand text-center">
-						<img width="40%" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png'); ?>" alt="Logo Blog si WANUL">
+						<img width="40%" src="<?php echo config_item('base_url'); ?>assets/img/Blog-Si-WANUL_Logo.png" alt="Logo Blog si WANUL">
 						<h1 class="title" style="font-size: 100px; margin-top: -2%;">404</h1>
 						<p style="margin-top: -5%;">Halaman Tidak Ditemukan.</p>
 						<p>
@@ -88,26 +88,26 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 	<!--   Core JS Files   -->
-	<script src="<?php echo base_url('assets/js/core/jquery.min.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo config_item('base_url'); ?>assets/js/core/jquery.min.js" type="text/javascript"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<script src="<?php echo base_url('assets/js/core/popper.min.js'); ?>" type="text/javascript"></script>
-	<script src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js'); ?>" type="text/javascript"></script>
-	<script src="<?php echo base_url('assets/js/plugins/moment.min.js'); ?>"></script>
+	<script src="<?php echo config_item('base_url'); ?>assets/js/core/popper.min.js" type="text/javascript"></script>
+	<script src="<?php echo config_item('base_url'); ?>assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+	<script src="<?php echo config_item('base_url'); ?>assets/js/plugins/moment.min.js"></script>
 	<!-- End of core JS files -->
 
 
 	<!-- Plugin for the Datepicker -->
-	<script src="<?php echo base_url('assets/js/plugins/bootstrap-datetimepicker.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo config_item('base_url'); ?>assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
 	<!-- End of plugin for the datepicker -->
 
 
 	<!-- Plugin for the sliders -->
-	<script src="<?php echo base_url('assets/js/plugins/nouislider.min.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo config_item('base_url'); ?>assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
 	<!-- End of plugin for the sliders -->
 
 
 	<!-- Control center -->
-	<script src="<?php echo base_url('assets/js/material-kit.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo config_item('base_url'); ?>assets/js/material-kit.js" type="text/javascript"></script>
 	<script>
 		$(document).ready(function() {
 			//init DateTimePickers
@@ -118,7 +118,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		});
 
 		$(".back").click(function() {
-			window.location.href = "<?php echo site_url(); ?>";
+			window.location.href = "<?php echo config_item('base_url'); ?>";
 		});
 	</script>
 	<!-- End of control center -->
