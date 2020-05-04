@@ -20,11 +20,22 @@ class Blog extends CI_Controller {
     }
 
     public function view($y = null, $m = null, $d = null){
-      $url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Posts?view=blog&y=". $y. 
-      "&m=". $m. "&d=". $d;
-      $content = $this->api->callAPI("GET", $url);
-      $data['blog'] = json_decode($content, true);
-  
-      $this->load->view('blog/_blog_view', $data);
+      if(empty($y) || empty($m) || empty($d)){
+        show_404();
+      }
+      else{
+        $url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Posts?view=blog&y=". $y. 
+        "&m=". $m. "&d=". $d;
+        $content = $this->api->callAPI("GET", $url);
+        $data['blog'] = json_decode($content, true);
+
+        if($data['blog']['data'] === NULL){
+          show_404();
+        }
+        else{
+          $this->load->view('blog/_blog_view', $data);
+        }
+    
+      }
     }
 }
