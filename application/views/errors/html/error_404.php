@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,8 +74,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<img width="40%" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png'); ?>" alt="Logo Blog si WANUL">
 						<h1 class="title" style="font-size: 100px; margin-top: -2%;">404</h1>
 						<p style="margin-top: -5%;">Halaman Tidak Ditemukan.</p>
-						<p>Anda Tersesat?</p>
-						<p>Kembalilah Ke Jalan Yang Benar.</p>
+						<p>
+							Anda Tersesat?<br>
+							Kembalilah Ke Jalan Yang Benar.
+						</p>
 					</div>
 				</div>
 			</div>
