@@ -108,13 +108,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		</button>
 		<!-- End of scroll to top button -->
 
-		
+
 		<!-- All blogs -->
 		<div class="container blog">
 			<div class="section text-center">
 				<h2 class="title">Kumpulan Blog</h2>
 				<div class="row justify-content-md-center">
-				<?php
+					<?php
 					if ($all_blogs['data'] === null) {
 						?>
 						<h3 class="px-5"><i>Belum ada konten, stay tuned guys ; )</i></h3>
@@ -146,8 +146,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 				<!-- Pagination -->
 				<!-- <?php
-				if ($all_blogs['data'] !== null && count($all_blogs['data']) > 6) {
-					?>
+						if ($all_blogs['data'] !== null && count($all_blogs['data']) > 6) {
+							?>
 					<nav aria-label="Page navigation">
 						<ul class="pagination justify-content-center mt-5">
 							<li class="page-item">
@@ -302,12 +302,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		});
 
 		$(".back").click(function() {
-			if(document.referrer == ''){
-				window.location.href = "<?php echo site_url(); ?>";
-			}
-			else{
-				history.back();
-			}
+			window.location.href = "<?php echo site_url(); ?>";
 		});
 	</script>
 	<!-- End of control center -->
