@@ -225,7 +225,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		});
 
 		$(".back").click(function() {
-			if(document.referrer.indexOf(location.protocol + "//" + location.host) === 0){
+			if(document.referrer === ''){
 				window.location.href = "<?php echo site_url(); ?>";
 			}
 			else{
