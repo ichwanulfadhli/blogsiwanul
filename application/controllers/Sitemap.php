@@ -17,7 +17,7 @@ class Sitemap extends CI_Controller {
 
 		$this->load->library('api');
 		
-		$this->load->model('sitemapmodel');
+		$this->load->model('SitemapModel');
 
 		$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Posts?view=all";
 		$content = $this->api->callAPI("GET", $url);
@@ -40,22 +40,22 @@ class Sitemap extends CI_Controller {
 	 * More information about sitemap indexes: http://www.sitemaps.org/protocol.html#index
 	 */
 	public function index() {
-		$this->sitemapmodel->add(base_url('sitemap/general'), date('Y-m-d', time()));
-		$this->sitemapmodel->add(base_url('sitemap/articles'), date('Y-m-d', time()));
-		$this->sitemapmodel->output('sitemapindex');
+		$this->SitemapModel->add(base_url('sitemap/general'), date('Y-m-d', time()));
+		$this->SitemapModel->add(base_url('sitemap/articles'), date('Y-m-d', time()));
+		$this->SitemapModel->output('sitemapindex');
 	}
 	
 	/**
 	 * Generate a sitemap both based on static urls and an array of urls
 	 */
 	public function general() {
-		$this->sitemapmodel->add(base_url(), NULL, 'monthly', 1);
-		$this->sitemapmodel->add(base_url('Blog'), NULL, 'monthly', 0.9);
+		$this->SitemapModel->add(base_url(), NULL, 'monthly', 1);
+		$this->SitemapModel->add(base_url('Blog'), NULL, 'monthly', 0.9);
 
 		foreach ($this->articles as $article) {
-			$this->sitemapmodel->add($article['loc'], $article['lastmod'], $article['changefreq'], $article['priority']);
+			$this->SitemapModel->add($article['loc'], $article['lastmod'], $article['changefreq'], $article['priority']);
 		}
-		$this->sitemapmodel->output();
+		$this->SitemapModel->output();
 	}
 	
 	/**
@@ -63,9 +63,9 @@ class Sitemap extends CI_Controller {
 	 */
 	public function articles() {
 		foreach ($this->articles as $article) {
-			$this->sitemapmodel->add($article['loc'], $article['lastmod'], $article['changefreq'], $article['priority']);
+			$this->SitemapModel->add($article['loc'], $article['lastmod'], $article['changefreq'], $article['priority']);
 		}
-		$this->sitemapmodel->output();
+		$this->SitemapModel->output();
 	}
 	
 }
