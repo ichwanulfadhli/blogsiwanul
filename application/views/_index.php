@@ -196,9 +196,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 	<!-- Footer -->
-	<footer class="footer footer-default px-5">
+	<footer class="footer footer-default px-lg-5">
 		<div class="container px-5">
-			<div class="float-left">
+			<div class="float-xl-left">
 				<ul>
 					<li>
 						<a href="https://www.instagram.com/ichwa_nf/" target="_blank" data-toggle="tooltip" data-placement="top" title="Follow Instagram Saya" data-container="body">
@@ -212,7 +212,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					</li>
 				</ul>
 			</div>
-			<div class="copyright float-right">
+			<div class="copyright float-xl-right">
 				&copy;
 				<script>
 					document.write(new Date().getFullYear())
