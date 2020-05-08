@@ -27,7 +27,7 @@ class Sitemap extends CI_Controller {
 
 		foreach($data['blog']['data'] as $result){
 			$this->articles[] = array(
-				'loc' => base_url('Blog/view/'. date("Y", strtotime($result['post_date'])). '/'. date("m", strtotime($result['post_date'])). '/'. date("d", strtotime($result['post_date']))),
+				'loc' => base_url('Blog/read/'. $result['post_url']),
 				'lastmod' => date('Y-m-d', time()),
 				'changefreq' => 'monthly',
 				'priority' => 0.5

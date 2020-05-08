@@ -43,7 +43,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- End of CSS files -->
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161399100-3"></script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161399100-3"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 
@@ -53,7 +53,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		gtag('js', new Date());
 
 		gtag('config', 'UA-161399100-3');
-	</script>
+	</script> -->
 	<!-- End of Global site tag Google Analytics -->
 
 

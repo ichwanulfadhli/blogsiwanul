@@ -43,7 +43,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- End of CSS files -->
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161399100-3"></script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161399100-3"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 
@@ -53,7 +53,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		gtag('js', new Date());
 
 		gtag('config', 'UA-161399100-3');
-	</script>
+	</script> -->
 	<!-- End of Global site tag Google Analytics -->
 
 
@@ -151,7 +151,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<p class="card-text">
 										<?php echo $data['post_description']; ?>
 									</p>
-									<a href="<?php echo site_url('Blog/view/' . date("Y", strtotime($data['post_date'])) . '/' . date("m", strtotime($data['post_date'])) . '/' . date("d", strtotime($data['post_date']))); ?>" class="card-link">Baca lebih lanjut...</a>
+									<a href="<?php echo site_url('Blog/read/'. $data['post_url']); ?>" class="card-link">Baca lebih lanjut...</a>
 								</div>
 								<div class="card-footer text-muted">
 									<?php echo date("d F Y", strtotime($data['post_date'])) . ', jam ' . date("H:i", strtotime($data['post_date'])); ?>
