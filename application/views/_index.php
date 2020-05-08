@@ -135,29 +135,28 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<h2 class="title">Blog Terbaru</h2>
 				<div class="row justify-content-md-center">
 					<?php
-					if($recent_blog['data'] === null){
+					if ($recent_blog['data'] === null) {
 						?>
 						<h3 class="px-5"><i>Belum ada konten, stay tuned guys ; )</i></h3>
-					<?php
-					}
-					else{
-						foreach($recent_blog['data'] as $data){
-						?>
-						<div class="col-md-7">
-							<div class="card">
-								<img class="card-img-top" src="<?php echo $data['post_cover']; ?>" alt="Blog cover">
-								<div class="card-body text-left">
-									<h4 class="card-title"><?php echo $data['post_title']; ?></h4>
-									<p class="card-text">
-										<?php echo $data['post_description']; ?>
-									</p>
-									<a href="<?php echo site_url('Blog/read/'. $data['post_url']); ?>" class="card-link">Baca lebih lanjut...</a>
-								</div>
-								<div class="card-footer text-muted">
-									<?php echo date("d F Y", strtotime($data['post_date'])) . ', jam ' . date("H:i", strtotime($data['post_date'])); ?>
+						<?php
+						} else {
+							foreach ($recent_blog['data'] as $data) {
+								?>
+							<div class="col-md-7">
+								<div class="card">
+									<img class="card-img-top" src="<?php echo $data['post_cover']; ?>" alt="Blog cover">
+									<div class="card-body text-left">
+										<h4 class="card-title"><?php echo $data['post_title']; ?></h4>
+										<p class="card-text">
+											<?php echo $data['post_description']; ?>
+										</p>
+										<a href="<?php echo site_url('Blog/read/' . $data['post_url']); ?>" class="card-link">Baca lebih lanjut...</a>
+									</div>
+									<div class="card-footer text-muted">
+										<?php echo date("d F Y", strtotime($data['post_date'])) . ', jam ' . date("H:i", strtotime($data['post_date'])); ?>
+									</div>
 								</div>
 							</div>
-						</div>
 					<?php
 						}
 					}
@@ -166,23 +165,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			</div>
 		</div>
 		<!-- End of recent blog -->
-		
+
 
 		<!-- About me -->
 		<div class="container aboutMe">
 			<div class="section text-center">
 				<h2 class="title">Tentang Saya</h2>
 				<div class="media px-md-3 d-block d-md-flex mt-3">
-					<img class="d-flex mb-3 mx-auto z-depth-1 img-raised rounded img-fluid my-pic" src="<?php echo base_url('assets/img/faces/me.jpg') ?>" alt="Ichwanul Fadhli">
+				<img class="d-flex mb-3 mx-auto z-depth-1 img-raised rounded img-fluid my-pic" src="<?php echo $aboutme['data'][0]['aboutme_photo']; ?>" alt="Ichwanul Fadhli">
 					<div class="media-body text-center text-md-left ml-md-3 ml-0">
-						<h3 class="mt-0 font-weight-bold px-3">Ichwanul Fadhli</h3>
+						<h3 class="mt-0 font-weight-bold px-3"><?php echo $aboutme['data'][0]['aboutme_name']; ?></h3>
 						<h4 class="text-left description px-3">
-							Ichwanul Fadhli alias "Wanul" adalah seorang pria (<script>
-								document.write(new Date().getFullYear() - 1999 + " tahun");
-							</script>) asal Bogor yang hobi mendengarkan musik, dan melakukan <i>coding</i>. Dia dulu berkeinginan untuk menjadi seorang <i>Game Developer</i>,
-							namun hanya saja mimpinya tidak kesampaian. Sejak saat itu dia memutuskan untuk menjadi seorang <i>Programmer</i>. Dia belajar dan terus belajar supaya
-							dia bisa menggapai cita-citanya. Saat ini dia sedang berkuliah di STIKOM Binaniaga Bogor dengan jurusan Teknik Informatika dan juga dia sedang ada di
-							tingkat 6 (Semester 6).
+							<?php echo $aboutme['data'][0]['aboutme_description']; ?>
 						</h4>
 					</div>
 				</div>
