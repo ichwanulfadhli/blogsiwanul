@@ -3605,10 +3605,10 @@ tbody.collapse.show {
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
   font-size: 1rem;
-  color: #212529;
+  color: #ffffff;
   text-align: left;
   list-style: none;
-  background-color: #fff;
+  background-color: #393e46;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
@@ -15441,7 +15441,7 @@ h6,
 }
 
 p {
-  font-size: 14px;
+  font-size: 16px;
   margin: 0 0 10px;
 }
 
@@ -15491,7 +15491,7 @@ h2.title {
 .description,
 .card-description,
 .footer-big p {
-  color: rgba(255, 255, 255, 0.87);/*#999;*/
+  color: rgba(255, 255, 255, 1);/*#999;*/
 }
 
 .text-warning {
@@ -15964,7 +15964,7 @@ h2.title {
   display: flex;
   flex-flow: nowrap;
   align-items: center;
-  color: #333;
+  color: #ffffff;
   font-weight: normal;
   text-decoration: none;
   font-size: .8125rem;
@@ -16002,7 +16002,7 @@ h2.title {
 .dropdown-menu a:active {
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(56, 207, 183, 0.4);
   background-color: #6FFFE9;
-  color: #fff !important;
+  color: #393e46 !important;
 }
 
 .dropdown-toggle.bmd-btn-icon::after,
@@ -18573,7 +18573,7 @@ footer .pull-center {
   .navbar .dropdown .dropdown-menu {
     background-color: transparent;
     border: 0;
-    padding-bottom: 15px;
+    padding-bottom: 0px;
     transition: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -18581,7 +18581,7 @@ footer .pull-center {
     width: auto;
     margin-bottom: 15px;
     padding-top: 0;
-    height: 300px;
+    height: auto;
     animation: none;
     opacity: 1;
     overflow-y: scroll;

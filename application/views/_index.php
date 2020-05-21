@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+
+setlocale(LC_TIME, 'id_ID');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,18 +11,25 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+
+	<meta name="description" content="<?php echo $description; ?>">
+	<meta name="keywords" content="<?php echo $keywords; ?>">
+	<meta name="robot" content="index,follow">
+	<meta name="language" content="indonesia">
+	<meta name="author" content="Ichwanul Fadhli">
 	<!-- End of meta tags -->
 
 
 	<!-- Icon -->
-	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.png'); ?>'">
+	<link rel="shortcut icon" href="<?php echo base_url('assets/img/favicon.png'); ?>">
 	<link rel="icon" type="image/png" href="<?php echo base_url('assets/img/favicon.png'); ?>">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.png'); ?>'">
 	<!-- End of icon -->
 
 
 	<!-- Title -->
 	<title>
-		Blog si WANUL
+		Blog si WANUL | Home
 	</title>
 	<!-- End of title -->
 
@@ -33,7 +42,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<!-- CSS Files -->
 	<link href="<?php echo base_url('assets/css/material-kit.css'); ?>" rel="stylesheet" />
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	<!-- End of CSS files -->
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161399100-3"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-161399100-3');
+	</script>
+	<!-- End of Global site tag Google Analytics -->
 
 
 	<!-- 
@@ -62,18 +86,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">
-						<a href="javascript:void(0)" class="nav-link scroll-to" id="recentBlog">
-							<i class="material-icons">bookmark</i> Blog Terbaru
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="material-icons">bookmarks</i> Blog
 						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item scroll-to" id="recentBlog" href="#recentBlog">Blog Terbaru</a>
+							<a class="dropdown-item" href="<?php echo site_url('blog'); ?>">Kumpulan Blog</a>
+						</div>
 					</li>
 					<li class="nav-item">
-						<a href="javascript:void(0)" class="nav-link scroll-to" id="allBlogs">
-							<i class="material-icons">bookmarks</i> Kumpulan Blog
-						</a>
-					</li>
-					<li class="nav-item">
-						<a href="javascript:void(0)" class="nav-link scroll-to" id="aboutMe">
+						<a href="#aboutMe" class="nav-link scroll-to" id="aboutMe">
 							<i class="material-icons">person</i> Tentang Saya
 						</a>
 					</li>
@@ -116,29 +139,30 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="row justify-content-md-center">
 					<?php
 					if($recent_blog['data'] === null){
-					?>
-					<h3 class="px-5"><i>Belum ada konten, stay tuned guys ; )</i></h3>
+						?>
+						<h3 class="px-5"><i>Belum ada konten, stay tuned guys ; )</i></h3>
 					<?php
 					}
 					else{
-					?>
-					<div class="col-md-7">
-						<div class="card">
-							<img class="card-img-top" src="<?php echo $recent_blog['data'][0]['post_cover']; ?>" alt="Blog cover">
-							<div class="card-body text-left">
-								<h4 class="card-title"><?php echo $recent_blog['data'][0]['post_title']; ?></h4>
-								<h6 class="card-subtitle mb-2 text-muted"><?php echo $recent_blog['data'][0]['genre_name']; ?></h6>
-								<p class="card-text">
-									<?php echo $recent_blog['data'][0]['post_description']; ?>
-								</p>
-								<a href="<?php echo site_url('Home/view?post='. $recent_blog['data'][0]['post_id']); ?>" class="card-link">Baca lebih lanjut...</a>
-							</div>
-							<div class="card-footer text-muted">
-								<?php echo date("d F Y", strtotime($recent_blog['data'][0]['post_date'])) . ', jam ' . date("H:i", strtotime($recent_blog['data'][0]['post_date'])); ?>
+						foreach($recent_blog['data'] as $data){
+						?>
+						<div class="col-md-7">
+							<div class="card">
+								<img class="card-img-top" src="<?php echo $data['post_cover']; ?>" alt="Blog cover">
+								<div class="card-body text-left">
+									<h4 class="card-title"><?php echo $data['post_title']; ?></h4>
+									<p class="card-text">
+										<?php echo $data['post_description']; ?>
+									</p>
+									<a href="<?php echo site_url('blog/read/'. $data['post_url']); ?>" class="card-link">Baca lebih lanjut...</a>
+								</div>
+								<div class="card-footer text-muted">
+									<?php echo strftime("%d %B %Y", strtotime($data['post_date'])) . ', pukul ' . strftime("%H:%M", strtotime($data['post_date'])); ?>
+								</div>
 							</div>
 						</div>
-					</div>
 					<?php
+						}
 					}
 					?>
 				</div>
@@ -147,93 +171,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<!-- End of recent blog -->
 		
 
-		<!-- All blogs -->
-		<div class="container allBlogs">
-			<div class="section text-center">
-				<h2 class="title">Kumpulan Blog</h2>
-				<div class="row justify-content-md-center">
-					<?php
-					if($all_blogs['data'] === null){
-					?>
-					<h3 class="px-5"><i>Belum ada konten, stay tuned guys ; )</i></h3>
-					<?php
-					}
-					else{
-						foreach($all_blogs['data'] as $content){
-					?>
-					<div class="col-md-5">
-						<div class="card">
-							<img class="card-img-top" src="<?php echo $content['post_cover']; ?>"
-								alt="Blog cover">
-							<div class="card-body text-left">
-								<h4 class="card-title"><?php echo $content['post_title']; ?></h4>
-								<h6 class="card-subtitle mb-2 text-muted"><?php echo $content['genre_name']; ?></h6>
-								<p class="card-text">
-									<?php echo $content['post_description']; ?>
-								</p>
-								<a href="<?php echo site_url('Home/view?post='. $content['post_id']); ?>" class="card-link">Baca lebih lanjut...</a>
-							</div>
-							<div class="card-footer text-muted">
-								<?php echo date("d F Y", strtotime($content['post_date'])) . ', jam ' . date("H:i", strtotime($content['post_date'])); ?>
-							</div>
-						</div>
-					</div>
-					<?php
-						}
-					}
-					?>
-				</div>
-
-
-				<!-- Pagination -->
-				<?php
-				if($all_blogs['data'] !== null && count($all_blogs['data']) > 6){
-				?>
-				<nav aria-label="Page navigation">
-					<ul class="pagination justify-content-center mt-5">
-						<li class="page-item">
-							<a class="page-link" href="javascript:;" tabindex="-1">Sebelumnya</a>
-						</li>
-						<li class="page-item active">
-							<a class="page-link" href="javascript:;">1 <span class="sr-only">(current)</span></a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="javascript:;">2</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="javascript:;">3</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="javascript:;">Selanjutnya</a>
-						</li>
-					</ul>
-				</nav>
-				<?php
-				}
-				?>
-				<!-- End of pagination -->
-
-
-			</div>
-		</div>
-		<!-- End of all blogs -->
-
-
 		<!-- About me -->
 		<div class="container aboutMe">
 			<div class="section text-center">
 				<h2 class="title">Tentang Saya</h2>
 				<div class="media px-md-3 d-block d-md-flex mt-3">
-					<img class="d-flex mb-3 mx-auto z-depth-1 img-raised rounded img-fluid my-pic" src="<?php echo base_url('assets/img/faces/me.jpg') ?>" alt="Ichwanul Fadhli">
+				<img class="d-flex mb-3 mx-auto z-depth-1 img-raised rounded img-fluid my-pic" src="<?php echo $aboutme['data'][0]['aboutme_photo']; ?>" alt="Ichwanul Fadhli">
 					<div class="media-body text-center text-md-left ml-md-3 ml-0">
-						<h3 class="mt-0 font-weight-bold px-3">Ichwanul Fadhli</h3>
+						<h3 class="mt-0 font-weight-bold px-3"><?php echo $aboutme['data'][0]['aboutme_name']; ?></h3>
 						<h4 class="text-left description px-3">
-							Ichwanul Fadhli alias "Wanul" adalah seorang pria (<script>
-								document.write(new Date().getFullYear() - 1999 + " tahun");
-							</script>) asal Bogor yang hobi mendengarkan musik, dan melakukan <i>coding</i>. Dia dulu berkeinginan untuk menjadi seorang <i>Game Developer</i>,
-							namun hanya saja mimpinya tidak kesampaian. Sejak saat itu dia memutuskan untuk menjadi seorang <i>Programmer</i>. Dia belajar dan terus belajar supaya
-							dia bisa menggapai cita-citanya. Saat ini dia sedang berkuliah di STIKOM Binaniaga Bogor dengan jurusan Teknik Informatika dan juga dia sedang berkuliah di
-							tingkat 6 (Semester 6).
+							<?php echo $aboutme['data'][0]['aboutme_description']; ?>
 						</h4>
 					</div>
 				</div>
@@ -247,9 +194,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 	<!-- Footer -->
-	<footer class="footer footer-default px-5">
+	<footer class="footer footer-default px-lg-5">
 		<div class="container px-5">
-			<div class="float-left">
+			<div class="float-xl-left">
 				<ul>
 					<li>
 						<a href="https://www.instagram.com/ichwa_nf/" target="_blank" data-toggle="tooltip" data-placement="top" title="Follow Instagram Saya" data-container="body">
@@ -263,7 +210,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					</li>
 				</ul>
 			</div>
-			<div class="copyright float-right">
+			<div class="copyright float-xl-right">
 				&copy;
 				<script>
 					document.write(new Date().getFullYear())
@@ -280,6 +227,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<!--   Core JS Files   -->
 	<script src="<?php echo base_url('assets/js/core/jquery.min.js'); ?>" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="<?php echo base_url('assets/js/core/popper.min.js'); ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js'); ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('assets/js/plugins/moment.min.js'); ?>"></script>
@@ -291,12 +239,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- End of plugin for the datepicker -->
 
 
-	<!-- Bug tooltip karna jQuery-UI -->
-	<!-- jQuery UI Plugin -->
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
-	<!-- End if jQuery UI plugin -->
-
-
 	<!-- Plugin for the sliders -->
 	<script src="<?php echo base_url('assets/js/plugins/nouislider.min.js'); ?>" type="text/javascript"></script>
 	<!-- End of plugin for the sliders -->
@@ -304,72 +246,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<!-- Control center -->
 	<script src="<?php echo base_url('assets/js/material-kit.js'); ?>" type="text/javascript"></script>
-	<script>
-		// Function to load random image
-		function randomBackground() {
-			// List of images
-			var images = [
-				'background-1.jpg',
-				'background-2.jpg',
-				'background-3.jpg',
-				'background-4.jpg',
-				'background-5.jpg',
-				'background-6.jpg',
-			];
-
-			// Full path
-			var url = "<?php echo base_url('assets/img/'); ?>";
-			// The image result
-			var output = images[Math.floor(Math.random() * images.length)];
-
-			// Returning output
-			return url + output;
-
-		}
-
-		// Displaying random background image on page load
-		window.onload = document.getElementById("background").style.backgroundImage = "url(" + randomBackground(1, 6) + ")";
-
-		$(document).ready(function() {
-			//init DateTimePickers
-			materialKit.initFormExtendedDatetimepickers();
-
-			// Sliders Init
-			materialKit.initSliders();
-		});
-
-		// Function to scroll to each section on the page
-		$(function() {
-			$(".scroll-to").click(function() {
-				var section = $(this).attr("id");
-
-				if ($('.' + section).length != 0) {
-					$("html, body").animate({
-						scrollTop: $('.' + section).offset().top
-					}, 'slow');
-				}
-			});
-		});
-
-		// On scroll window, will display "To Top Button"
-		$(window).scroll(function() {
-			if ($(this).scrollTop() >= 535) {
-				// jQuery fade in animation
-				$("#toTop").fadeIn(350);
-			} else if ($(this).scrollTop() <= 300) {
-				// jQuery fade out animation
-				$("#toTop").fadeOut(350);
-			}
-		});
-
-		// Function scroll to top
-		$("#toTop").click(function() {
-			// Scrolling animation
-			$("html, body").animate({
-				scrollTop: 0
-			}, 500);
-		});
-	</script>
+	<script src="<?php echo base_url('assets/js/my.js'); ?>" type="text/javascript"></script>
 	<!-- End of control center -->
 </body>
 
