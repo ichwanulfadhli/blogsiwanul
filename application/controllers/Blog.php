@@ -9,9 +9,9 @@ class Blog extends CI_Controller{
 	}
 	
 	public function index(){
-		$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Posts?view=all";
+		$url = "https://api.blogsiwanul.my.id/index.php/Posts?view=all";
 		$content = $this->api->callAPI("GET", $url);
-		$data['all_blogs'] = json_decode($content, true);
+		$data['all_blogs'] = $content;
       
         $data['description'] = "Website yang berisikan informasi yang bermanfaat, kadang gak jelas, dan juga jadi wadah curhatan si Wanul.";
         $data['keywords'] = "ichwanul fadhli, blog ichwanul fadhli, ichwanul, wanul, blog iseng-iseng, blog iseng";
@@ -24,9 +24,9 @@ class Blog extends CI_Controller{
 			show_404();
 		}
 		else{
-			$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Posts?view=blog&title=". $title;
+			$url = "https://api.blogsiwanul.my.id/index.php/Posts?view=blog&title=". $title;
 			$content = $this->api->callAPI("GET", $url);
-			$data['blog'] = json_decode($content, true);
+			$data['blog'] = $content;
 			
 			if($data['blog']['data'] === NULL){
 				show_404();

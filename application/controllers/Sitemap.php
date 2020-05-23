@@ -19,18 +19,18 @@ class Sitemap extends CI_Controller {
 		
 		$this->load->model('SitemapModel');
 
-		$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Posts?view=all";
+		$url = "https://api.blogsiwanul.my.id/index.php/Posts?view=all";
 		$content = $this->api->callAPI("GET", $url);
-		$data['blog'] = json_decode($content, true);
+		$data['blog'] = $content;
 
 		$this->articles = array();
 
 		foreach($data['blog']['data'] as $result){
 			$this->articles[] = array(
-				'loc' => base_url('Blog/read/'. $result['post_url']),
-				'lastmod' => date('Y-m-d', time()),
+				'loc'        => base_url('blog/read/'. $result['post_url']),
+				'lastmod'    => date('Y-m-d', time()),
 				'changefreq' => 'monthly',
-				'priority' => 0.5
+				'priority'   => 0.5
 			);
 		}
 	}
@@ -50,7 +50,7 @@ class Sitemap extends CI_Controller {
 	 */
 	public function general() {
 		$this->SitemapModel->add(base_url(), NULL, 'monthly', 1);
-		$this->SitemapModel->add(base_url('Blog'), NULL, 'monthly', 0.9);
+		$this->SitemapModel->add(base_url('blog'), NULL, 'monthly', 0.9);
 
 		foreach ($this->articles as $article) {
 			$this->SitemapModel->add($article['loc'], $article['lastmod'], $article['changefreq'], $article['priority']);
