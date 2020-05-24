@@ -50,6 +50,8 @@ class Sitemap extends CI_Controller {
 	 */
 	public function general() {
 		$this->SitemapModel->add(base_url(), NULL, 'monthly', 1);
+		$this->SitemapModel->add(base_url('#recentBlog'), NULL, 'monthly', 1);
+		$this->SitemapModel->add(base_url('#aboutMe'), NULL, 'monthly', 1);
 		$this->SitemapModel->add(base_url('blog'), NULL, 'monthly', 0.9);
 
 		foreach ($this->articles as $article) {
