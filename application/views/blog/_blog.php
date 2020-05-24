@@ -45,7 +45,7 @@ setlocale(LC_TIME, 'id_ID');
 	<!-- End of CSS files -->
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161399100-3"></script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161399100-3"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 
@@ -55,7 +55,7 @@ setlocale(LC_TIME, 'id_ID');
 		gtag('js', new Date());
 
 		gtag('config', 'UA-161399100-3');
-	</script>
+	</script> -->
 	<!-- End of Global site tag Google Analytics -->
 
 
@@ -124,17 +124,17 @@ setlocale(LC_TIME, 'id_ID');
 							foreach ($all_blogs['data'] as $content) {
 								?>
 							<div class="col-md-5">
-								<div class="card">
-									<img class="card-img-top" src="<?php echo $content['post_cover']; ?>" alt="Blog cover">
+								<div class="card" style="height: 35rem;">
+									<img class="card-img-top" style="height: 50%;" src="<?php echo $content['post_cover']; ?>" alt="Blog cover">
 									<div class="card-body text-left">
+										<label><?php echo strftime("%d %B %Y", strtotime($content['post_date'])) . ', pukul ' . strftime("%H:%M", strtotime($content['post_date'])); ?></label>
 										<h4 class="card-title"><?php echo $content['post_title']; ?></h4>
 										<p class="card-text">
 											<?php echo $content['post_description']; ?>
 										</p>
-										<a href="<?php echo site_url('blog/read/'. $content['post_url']); ?>" class="card-link">Baca lebih lanjut...</a>
 									</div>
 									<div class="card-footer text-muted">
-										<?php echo strftime("%d %B %Y", strtotime($content['post_date'])) . ', pukul ' . strftime("%H:%M", strtotime($content['post_date'])); ?>
+										<a href="<?php echo site_url('blog/read/'. $content['post_url']); ?>" class="card-link"><p style="font-size: 14px;">BACA BLOG</p></a>
 									</div>
 								</div>
 							</div>
