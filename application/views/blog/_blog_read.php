@@ -39,7 +39,7 @@ setlocale(LC_TIME, 'id_ID');
 	<!-- End of CSS files -->
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161399100-3"></script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161399100-3"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() {
@@ -47,7 +47,7 @@ setlocale(LC_TIME, 'id_ID');
 		}
 		gtag('js', new Date());
 		gtag('config', 'UA-161399100-3');
-	</script>
+	</script> -->
 	<!-- End of Global site tag Google Analytics -->
 
 	<!-- 
