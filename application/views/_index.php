@@ -138,48 +138,51 @@ setlocale(LC_TIME, 'id_ID');
 				<h2 class="title">Blog Terbaru</h2>
 				<div class="row justify-content-md-center">
 					<?php
-					if($recent_blog['data'] === null){
-						?>
+					if ($recent_blog['data'] === null) {
+					?>
 						<h3 class="px-5"><i>Belum ada konten, stay tuned guys ; )</i></h3>
-					<?php
-					}
-					else{
-						foreach($recent_blog['data'] as $data){
+						<?php
+					} else {
+						foreach ($recent_blog['data'] as $data) {
 						?>
-						<div class="col-md-7">
-							<div class="card">
-								<img class="card-img-top" src="<?php echo $data['post_cover']; ?>" alt="Blog cover">
-								<div class="card-body text-left">
-									<p class="text-muted" style="font-size: 14px; margin: 0px;"><b><?php echo strftime("%d %B %Y", strtotime($data['post_date'])) . ', pukul ' . strftime("%H:%M", strtotime($data['post_date'])); ?></b></p>
-									<h4 class="card-title" style="margin-top: 0px;"><?php echo $data['post_title']; ?></h4>
-									<p class="card-text">
-										<?php echo $data['post_description']; ?>
-									</p>
-								</div>
-								<div class="card-footer text-muted">
-									<a href="<?php echo site_url('blog/read/'. $data['post_url']); ?>" class="card-link"><p style="font-size: 14px;">BACA BLOG</p></a>
+							<div class="col-md-7">
+								<div class="card">
+									<img class="card-img-top" src="<?php echo $data['post_cover']; ?>" alt="Blog cover">
+									<div class="card-body text-left">
+										<p class="text-muted" style="font-size: 14px; margin: 0px;"><b><?php echo strftime("%d %B %Y", strtotime($data['post_date'])) . ', pukul ' . strftime("%H:%M", strtotime($data['post_date'])); ?></b></p>
+										<h4 class="card-title" style="margin-top: 0px;"><?php echo $data['post_title']; ?></h4>
+										<p class="card-text">
+											<?php echo $data['post_description']; ?>
+										</p>
+									</div>
+									<div class="card-footer text-muted">
+										<a href="<?php echo site_url('blog/read/' . $data['post_url']); ?>" style="font-size: 14px; padding: 10px;" class="btn btn-primary btn-link">
+											<i class="material-icons">book</i> &nbsp;&nbsp;Baca Blog
+										</a>
+									</div>
 								</div>
 							</div>
-						</div>
 					<?php
 						}
 					}
 					?>
 				</div>
 				<div class="mx-xl-5">
-					<a href="<?php echo site_url('blog'); ?>" class="btn btn-primary btn-link"><p style="font-size: 16px; margin: 0px;">Lihat Kumpulan Blog Lainnya</p></a>
+					<a href="<?php echo site_url('blog'); ?>" class="btn btn-primary btn-link">
+						<p style="font-size: 16px; margin: 0px;">Lihat Kumpulan Blog Lainnya</p>
+					</a>
 				</div>
 			</div>
 		</div>
 		<!-- End of recent blog -->
-		
+
 
 		<!-- About me -->
 		<div class="container aboutMe">
 			<div class="section text-center">
 				<h2 class="title">Tentang Saya</h2>
 				<div class="media px-md-3 d-block d-md-flex mt-3">
-				<img class="d-flex mb-3 mx-auto z-depth-1 img-raised rounded img-fluid my-pic" src="<?php echo $aboutme['data'][0]['aboutme_photo']; ?>" alt="Ichwanul Fadhli">
+					<img class="d-flex mb-3 mx-auto z-depth-1 img-raised rounded img-fluid my-pic" src="<?php echo $aboutme['data'][0]['aboutme_photo']; ?>" alt="Ichwanul Fadhli">
 					<div class="media-body text-center text-md-left ml-md-3 ml-0">
 						<h3 class="mt-0 font-weight-bold px-3"><?php echo $aboutme['data'][0]['aboutme_name']; ?></h3>
 						<h4 class="text-left description px-3">

@@ -134,7 +134,9 @@ setlocale(LC_TIME, 'id_ID');
 										</p>
 									</div>
 									<div class="card-footer text-muted">
-										<a href="<?php echo site_url('blog/read/'. $content['post_url']); ?>" class="card-link"><p style="font-size: 14px;">BACA BLOG</p></a>
+										<a href="<?php echo site_url('blog/read/' . $content['post_url']); ?>" style="font-size: 14px; padding: 10px;" class="btn btn-primary btn-link">
+											<i class="material-icons">book</i> &nbsp;&nbsp;Baca Blog
+										</a>
 									</div>
 								</div>
 							</div>
