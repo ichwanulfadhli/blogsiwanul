@@ -150,8 +150,8 @@ setlocale(LC_TIME, 'id_ID');
 							<div class="card">
 								<img class="card-img-top" src="<?php echo $data['post_cover']; ?>" alt="Blog cover">
 								<div class="card-body text-left">
-									<label><?php echo strftime("%d %B %Y", strtotime($data['post_date'])) . ', pukul ' . strftime("%H:%M", strtotime($data['post_date'])); ?></label>
-									<h4 class="card-title"><?php echo $data['post_title']; ?></h4>
+									<p class="text-muted" style="font-size: 14px; margin: 0px;"><b><?php echo strftime("%d %B %Y", strtotime($data['post_date'])) . ', pukul ' . strftime("%H:%M", strtotime($data['post_date'])); ?></b></p>
+									<h4 class="card-title" style="margin-top: 0px;"><?php echo $data['post_title']; ?></h4>
 									<p class="card-text">
 										<?php echo $data['post_description']; ?>
 									</p>
@@ -166,7 +166,9 @@ setlocale(LC_TIME, 'id_ID');
 					}
 					?>
 				</div>
-				<a href="<?php echo site_url('blog'); ?>" class="btn btn-primary btn-link"><h5>Lihat Kumpulan Blog Lainnya</h5></a>
+				<div class="mx-xl-5">
+					<a href="<?php echo site_url('blog'); ?>"><p style="font-size: 16px;"><u>LIHAT KUMPULAN BLOG LAINNYA</u></p></a>
+				</div>
 			</div>
 		</div>
 		<!-- End of recent blog -->

@@ -127,8 +127,8 @@ setlocale(LC_TIME, 'id_ID');
 								<div class="card" style="height: 35rem;">
 									<img class="card-img-top" style="height: 50%;" src="<?php echo $content['post_cover']; ?>" alt="Blog cover">
 									<div class="card-body text-left">
-										<label><?php echo strftime("%d %B %Y", strtotime($content['post_date'])) . ', pukul ' . strftime("%H:%M", strtotime($content['post_date'])); ?></label>
-										<h4 class="card-title"><?php echo $content['post_title']; ?></h4>
+										<p class="text-muted" style="font-size: 14px; margin: 0px;"><b><?php echo strftime("%d %B %Y", strtotime($content['post_date'])) . ', pukul ' . strftime("%H:%M", strtotime($content['post_date'])); ?></b></p>
+										<h4 class="card-title" style="margin-top: 0px;"><?php echo $content['post_title']; ?></h4>
 										<p class="card-text">
 											<?php echo $content['post_description']; ?>
 										</p>
