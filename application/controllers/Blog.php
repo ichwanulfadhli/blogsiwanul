@@ -9,7 +9,7 @@ class Blog extends CI_Controller{
 	}
 	
 	public function index(){
-		$url = "https://api.blogsiwanul.my.id/index.php/Posts?view=all";
+		$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Experiment/Posts?view=all";
 		$content = $this->api->callAPI("GET", $url);
 		$data['all_blogs'] = $content;
       
@@ -24,7 +24,7 @@ class Blog extends CI_Controller{
 			show_404();
 		}
 		else{
-			$url = "https://api.blogsiwanul.my.id/index.php/Posts?view=blog&title=". $title;
+			$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Experiment/Posts?view=blog&title=". $title;
 			$content = $this->api->callAPI("GET", $url);
 			$data['blog'] = $content;
 			
