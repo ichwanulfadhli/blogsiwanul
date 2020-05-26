@@ -168,7 +168,7 @@ setlocale(LC_TIME, 'id_ID');
 					?>
 				</div>
 				<div class="mx-xl-5">
-					<a href="<?php echo site_url('blog'); ?>" class="btn btn-primary btn-link">
+					<a href="<?php echo site_url('blog'); ?>" class="btn btn-primary btn-round btn-link">
 						<p style="font-size: 16px; margin: 0px;">Lihat Kumpulan Blog Lainnya</p>
 					</a>
 				</div>
