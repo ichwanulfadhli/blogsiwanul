@@ -1,4 +1,14 @@
 $(document).ready(function () {
+    if (document.getElementById('editor1')) {
+        var editor = CKEDITOR.replace('editor1');
+        CKEDITOR.instances.editor1.wordCount.wordCount;
+
+        editor.on('required', function (evt) {
+            editor.showNotification('This field is required.', 'warning');
+            evt.cancel();
+        });
+    }
+
     // Function to load random image
     function randomBackground() {
         // List of images
@@ -36,6 +46,11 @@ $(document).ready(function () {
         else if (window.location.href.indexOf("recentBlog") > -1) {
             $("html, body").animate({
                 scrollTop: $('.recentBlog').offset().top
+            }, 1000, 'easeInOutExpo');
+        }
+        else if (window.location.href.indexOf("comment") > -1) {
+            $("html, body").animate({
+                scrollTop: $('.comment').offset().top
             }, 1000, 'easeInOutExpo');
         }
     });
