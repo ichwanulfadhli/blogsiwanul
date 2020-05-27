@@ -1,7 +1,6 @@
 $(document).ready(function () {
     if (document.getElementById('editor1')) {
         var editor = CKEDITOR.replace('editor1');
-        CKEDITOR.instances.editor1.wordCount.wordCount;
 
         editor.on('required', function (evt) {
             editor.showNotification('This field is required.', 'warning');
