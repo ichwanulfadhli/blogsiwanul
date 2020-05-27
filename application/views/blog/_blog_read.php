@@ -148,7 +148,6 @@ setlocale(LC_TIME, 'id_ID');
 									<span class="bmd-form-group">
 										<textarea class="form-control" name="komen" id="editor1" placeholder="Komentar*" rows="6" required></textarea>
 									</span>
-									<label id="counter">0</label><label>/100</label>
 									<div class="media-footer mt-xl-3">
 										<input type="submit" class="btn btn-primary btn-round btn-wd float-right" value="Buat Komentar">
 									</div>
