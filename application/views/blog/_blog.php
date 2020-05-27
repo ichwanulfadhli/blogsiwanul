@@ -137,6 +137,9 @@ setlocale(LC_TIME, 'id_ID');
 										<a href="<?php echo site_url('blog/read/' . $content['post_url']); ?>" style="font-size: 14px; padding: 10px;" class="btn btn-primary btn-link">
 											<i class="material-icons">book</i> &nbsp;&nbsp;Baca Blog
 										</a>
+										<a href="<?php echo site_url('blog/read/' . $content['post_url']. '#comment'); ?>" style="font-size: 14px; padding: 10px;" class="btn btn-primary btn-link">
+											<i class="material-icons">comment</i> &nbsp;&nbsp;Komentar
+										</a>
 									</div>
 								</div>
 							</div>
