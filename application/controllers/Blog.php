@@ -27,6 +27,10 @@ class Blog extends CI_Controller{
 			$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Experiment/Posts?view=blog&title=". $title;
 			$content = $this->api->callAPI("GET", $url);
 			$data['blog'] = $content;
+
+			$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Experiment/Posts/comment";
+			$content = $this->api->callAPI("GET", $url);
+			$data['comment'] = $content;
 			
 			if($data['blog']['data'] === NULL){
 				show_404();
