@@ -9,13 +9,13 @@ class Home extends CI_Controller {
 	}
 
 	public function index(){
-		$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Posts?view=recent";
+		$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Experiment/Posts?view=recent";
 		$content = $this->api->callAPI("GET", $url);
-		$data['recent_blog'] = json_decode($content, true);
+		$data['recent_blog'] = $content;
 
-		$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/About";
+		$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Experiment/About";
 		$content = $this->api->callAPI("GET", $url);
-		$data['aboutme'] = json_decode($content, true);
+		$data['aboutme'] = $content;
 
 		$data['description'] = "Website yang berisikan informasi yang bermanfaat, kadang gak jelas, dan juga jadi wadah curhatan si Wanul.";
 		$data['keywords'] = "ichwanul fadhli, blog ichwanul fadhli, ichwanul, wanul, blog iseng-iseng, blog iseng";

@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+
+setlocale(LC_TIME, 'id_ID');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,15 +82,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	</nav>
 	<!-- End of navigation panel -->
 
-
 	<!-- Content -->
 	<!-- Landing content -->
 	<div class="page-header header-filter" id="background" data-parallax="true">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 ml-auto mr-auto mt-5">
+				<div class="col-xl-8 mx-auto mt-5">
 					<div class="brand text-center">
-						<img width="40%" style="margin-bottom: -3.5%;" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png'); ?>" alt="Logo Blog si WANUL">
+						<img width="35%" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png'); ?>" alt="Logo Blog si WANUL">
 						<h1 class="title"><i>Kumpulan Blog</i></h1>
 						<a href="javascript:void(0)" class="scroll-to" id="blog">
 							<img class="scroll-down-img" src="<?php echo base_url('assets/img/scroll-down.gif'); ?>" alt="Scroll down">
@@ -123,17 +124,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							foreach ($all_blogs['data'] as $content) {
 								?>
 							<div class="col-md-5">
-								<div class="card">
-									<img class="card-img-top" src="<?php echo $content['post_cover']; ?>" alt="Blog cover">
+								<div class="card" style="height: 35rem;">
+									<img class="card-img-top" style="height: 50%;" src="<?php echo $content['post_cover']; ?>" alt="Blog cover">
 									<div class="card-body text-left">
-										<h4 class="card-title"><?php echo $content['post_title']; ?></h4>
+										<p class="text-muted" style="font-size: 14px; margin: 0px;"><b><?php echo strftime("%d %B %Y", strtotime($content['post_date'])) . ', pukul ' . strftime("%H:%M", strtotime($content['post_date'])); ?></b></p>
+										<h4 class="card-title" style="margin-top: 0px;"><?php echo $content['post_title']; ?></h4>
 										<p class="card-text">
 											<?php echo $content['post_description']; ?>
 										</p>
-										<a href="<?php echo site_url('Blog/read/'. $content['post_url']); ?>" class="card-link">Baca lebih lanjut...</a>
 									</div>
 									<div class="card-footer text-muted">
-										<?php echo date("d F Y", strtotime($content['post_date'])) . ', jam ' . date("H:i", strtotime($content['post_date'])); ?>
+										<a href="<?php echo site_url('blog/read/' . $content['post_url']); ?>" style="font-size: 14px; padding: 10px;" class="btn btn-primary btn-link">
+											<i class="material-icons">book</i> &nbsp;&nbsp;Baca Blog
+										</a>
+										<a href="<?php echo site_url('blog/read/' . $content['post_url']. '#comment'); ?>" style="font-size: 14px; padding: 10px;" class="btn btn-primary btn-link">
+											<i class="material-icons">comment</i> &nbsp;&nbsp;Komentar
+										</a>
 									</div>
 								</div>
 							</div>
@@ -183,9 +189,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 	<!-- Footer -->
-	<footer class="footer footer-default px-5">
+	<footer class="footer footer-default px-lg-5">
 		<div class="container px-5">
-			<div class="float-left">
+			<div class="float-xl-left">
 				<ul>
 					<li>
 						<a href="https://www.instagram.com/ichwa_nf/" target="_blank" data-toggle="tooltip" data-placement="top" title="Follow Instagram Saya" data-container="body">
@@ -199,7 +205,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					</li>
 				</ul>
 			</div>
-			<div class="copyright float-right">
+			<div class="copyright float-xl-right">
 				&copy;
 				<script>
 					document.write(new Date().getFullYear())
@@ -235,75 +241,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<!-- Control center -->
 	<script src="<?php echo base_url('assets/js/material-kit.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/my.js'); ?>" type="text/javascript"></script>
 	<script>
-		// Function to load random image
-		function randomBackground() {
-			// List of images
-			var images = [
-				'background-1.jpg',
-				'background-2.jpg',
-				'background-3.jpg',
-				'background-4.jpg',
-				'background-5.jpg',
-				'background-6.jpg',
-			];
-
-			// Full path
-			var url = "<?php echo base_url('assets/img/'); ?>";
-			// The image result
-			var output = images[Math.floor(Math.random() * images.length)];
-
-			// Returning output
-			return url + output;
-
-		}
-
-		// Displaying random background image on page load
-		window.onload = document.getElementById("background").style.backgroundImage = "url(" + randomBackground(1, 6) + ")";
-
-		$(document).ready(function() {
-			//init DateTimePickers
-			materialKit.initFormExtendedDatetimepickers();
-
-			// Sliders Init
-			materialKit.initSliders();
-		});
-
-		// Function to scroll to each section on the page
-		$(function() {
-			$(".scroll-to").click(function() {
-				var section = $(this).attr("id");
-
-				if ($('.' + section).length != 0) {
-					$("html, body").animate({
-						scrollTop: $('.' + section).offset().top
-					}, 700, 'easeInOutQuint');
-				}
-			});
-		});
-
-		// On scroll window, will display "To Top Button"
-		$(window).scroll(function() {
-			if ($(this).scrollTop() >= 535) {
-				// jQuery fade in animation
-				$("#toTop").fadeIn(350);
-			} else if ($(this).scrollTop() <= 300) {
-				// jQuery fade out animation
-				$("#toTop").fadeOut(350);
-			}
-		});
-
-		// Function scroll to top
-		$("#toTop").click(function() {
-			// Scrolling animation
-			$("html, body").animate({
-				scrollTop: 0
-			}, 700, 'easeInOutQuint');
-		});
-
-		$(".back").click(function() {
-			window.location.href = "<?php echo site_url(); ?>";
-		});
+	    $(".back").click(function() {
+	        window.location.href = window.location.origin;
+	    });
 	</script>
 	<!-- End of control center -->
 </body>

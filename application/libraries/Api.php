@@ -7,22 +7,22 @@ Class Api {
         if($method == "GET" && $data === NULL){
             $content = file_get_contents($url, false);
 
-            return $content;
+            return json_decode($content, true);
         }
-        elseif($method == "POST"){
-            $opts = array(
-                'http' => array(
-                    'method'    => "POST",
-                    'header'    => 'Content-Type: application/x-www-form-urlencoded',
-                    'content'   => $data
-                    )
+        elseif($method == "POST" || $method == "PUT"){
+            $opts = array('http' => 
+            array(
+                'method'    => $method,
+				'header'    => 'Content-Type: application/x-www-form-urlencoded',
+                'content'   => $data
+                )
             );
             
             $context = stream_context_create($opts);
         
             $content = file_get_contents($url, false, $context);
             
-            return $content;
+            return json_decode($content, true);
         }
         else{
             return false;

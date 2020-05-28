@@ -109,14 +109,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<!-- Control center -->
 	<script src="<?php echo config_item('base_url'); ?>assets/js/material-kit.js" type="text/javascript"></script>
 	<script>
-		$(document).ready(function() {
-			//init DateTimePickers
-			materialKit.initFormExtendedDatetimepickers();
-
-			// Sliders Init
-			materialKit.initSliders();
-		});
-
 		$(".back").click(function() {
 			window.location.href = "<?php echo config_item('base_url'); ?>";
 		});

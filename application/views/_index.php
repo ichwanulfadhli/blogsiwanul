@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+
+setlocale(LC_TIME, 'id_ID');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,8 +21,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 	<!-- Icon -->
-	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.png'); ?>'">
+	<link rel="shortcut icon" href="<?php echo base_url('assets/img/favicon.png'); ?>">
 	<link rel="icon" type="image/png" href="<?php echo base_url('assets/img/favicon.png'); ?>">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.png'); ?>'">
 	<!-- End of icon -->
 
 
@@ -89,7 +92,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 							<a class="dropdown-item scroll-to" id="recentBlog" href="#recentBlog">Blog Terbaru</a>
-							<a class="dropdown-item" href="<?php echo site_url('Blog'); ?>">Kumpulan Blog</a>
+							<a class="dropdown-item" href="<?php echo site_url('blog'); ?>">Kumpulan Blog</a>
 						</div>
 					</li>
 					<li class="nav-item">
@@ -136,24 +139,29 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="row justify-content-md-center">
 					<?php
 					if ($recent_blog['data'] === null) {
-						?>
+					?>
 						<h3 class="px-5"><i>Belum ada konten, stay tuned guys ; )</i></h3>
 						<?php
-						} else {
-							foreach ($recent_blog['data'] as $data) {
-								?>
+					} else {
+						foreach ($recent_blog['data'] as $data) {
+						?>
 							<div class="col-md-7">
 								<div class="card">
 									<img class="card-img-top" src="<?php echo $data['post_cover']; ?>" alt="Blog cover">
 									<div class="card-body text-left">
-										<h4 class="card-title"><?php echo $data['post_title']; ?></h4>
+										<p class="text-muted" style="font-size: 14px; margin: 0px;"><b><?php echo strftime("%d %B %Y", strtotime($data['post_date'])) . ', pukul ' . strftime("%H:%M", strtotime($data['post_date'])); ?></b></p>
+										<h4 class="card-title" style="margin-top: 0px;"><?php echo $data['post_title']; ?></h4>
 										<p class="card-text">
 											<?php echo $data['post_description']; ?>
 										</p>
-										<a href="<?php echo site_url('Blog/read/' . $data['post_url']); ?>" class="card-link">Baca lebih lanjut...</a>
 									</div>
 									<div class="card-footer text-muted">
-										<?php echo date("d F Y", strtotime($data['post_date'])) . ', jam ' . date("H:i", strtotime($data['post_date'])); ?>
+										<a href="<?php echo site_url('blog/read/' . $data['post_url']); ?>" style="font-size: 14px; padding: 10px;" class="btn btn-primary btn-link">
+											<i class="material-icons">book</i> &nbsp;&nbsp;Baca Blog
+										</a>
+										<a href="<?php echo site_url('blog/read/' . $data['post_url']. '#comment'); ?>" style="font-size: 14px; padding: 10px;" class="btn btn-primary btn-link">
+											<i class="material-icons">comment</i> &nbsp;&nbsp;Komentar
+										</a>
 									</div>
 								</div>
 							</div>
@@ -161,6 +169,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						}
 					}
 					?>
+				</div>
+				<div class="mx-xl-5">
+					<a href="<?php echo site_url('blog'); ?>" class="btn btn-primary btn-round btn-link">
+						<p style="font-size: 16px; margin: 0px;">Lihat Kumpulan Blog Lainnya</p>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -172,7 +185,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="section text-center">
 				<h2 class="title">Tentang Saya</h2>
 				<div class="media px-md-3 d-block d-md-flex mt-3">
-				<img class="d-flex mb-3 mx-auto z-depth-1 img-raised rounded img-fluid my-pic" src="<?php echo $aboutme['data'][0]['aboutme_photo']; ?>" alt="Ichwanul Fadhli">
+					<img class="d-flex mb-3 mx-auto z-depth-1 img-raised rounded img-fluid my-pic" src="<?php echo $aboutme['data'][0]['aboutme_photo']; ?>" alt="Ichwanul Fadhli">
 					<div class="media-body text-center text-md-left ml-md-3 ml-0">
 						<h3 class="mt-0 font-weight-bold px-3"><?php echo $aboutme['data'][0]['aboutme_name']; ?></h3>
 						<h4 class="text-left description px-3">
@@ -242,72 +255,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<!-- Control center -->
 	<script src="<?php echo base_url('assets/js/material-kit.js'); ?>" type="text/javascript"></script>
-	<script>
-		// Function to load random image
-		function randomBackground() {
-			// List of images
-			var images = [
-				'background-1.jpg',
-				'background-2.jpg',
-				'background-3.jpg',
-				'background-4.jpg',
-				'background-5.jpg',
-				'background-6.jpg',
-			];
-
-			// Full path
-			var url = "<?php echo base_url('assets/img/'); ?>";
-			// The image result
-			var output = images[Math.floor(Math.random() * images.length)];
-
-			// Returning output
-			return url + output;
-
-		}
-
-		// Displaying random background image on page load
-		window.onload = document.getElementById("background").style.backgroundImage = "url(" + randomBackground(1, 6) + ")";
-
-		$(document).ready(function() {
-			//init DateTimePickers
-			materialKit.initFormExtendedDatetimepickers();
-
-			// Sliders Init
-			materialKit.initSliders();
-		});
-
-		// Function to scroll to each section on the page
-		$(function() {
-			$(".scroll-to").click(function() {
-				var section = $(this).attr("id");
-
-				if ($('.' + section).length != 0) {
-					$("html, body").animate({
-						scrollTop: $('.' + section).offset().top
-					}, 700, 'easeInOutQuint');
-				}
-			});
-		});
-
-		// On scroll window, will display "To Top Button"
-		$(window).scroll(function() {
-			if ($(this).scrollTop() >= 535) {
-				// jQuery fade in animation
-				$("#toTop").fadeIn(350);
-			} else if ($(this).scrollTop() <= 300) {
-				// jQuery fade out animation
-				$("#toTop").fadeOut(350);
-			}
-		});
-
-		// Function scroll to top
-		$("#toTop").click(function() {
-			// Scrolling animation
-			$("html, body").animate({
-				scrollTop: 0
-			}, 700, 'easeInOutQuint');
-		});
-	</script>
+	<script src="<?php echo base_url('assets/js/my.js'); ?>" type="text/javascript"></script>
 	<!-- End of control center -->
 </body>
 
