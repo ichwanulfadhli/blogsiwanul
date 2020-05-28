@@ -28,7 +28,7 @@ class Blog extends CI_Controller{
 			$content = $this->api->callAPI("GET", $url);
 			$data['blog'] = $content;
 
-			$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Experiment/Posts/comment";
+			$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Experiment/Posts/comment/". $title;
 			$content = $this->api->callAPI("GET", $url);
 			$data['comment'] = $content;
 			
@@ -38,6 +38,28 @@ class Blog extends CI_Controller{
 			else{
 				$this->load->view('blog/_blog_read', $data);
 			}
+
+			if(!empty($this->input->post("submit"))){
+				$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Experiment/Posts/comment";
+
+				$data = http_build_query(
+					array(
+						'comment_guest_name' => $this->input->post('nama'),
+						'comment_guest_email' => $this->input->post('email'),
+						'comment_content'    => $this->input->post('komen'),
+						'post_title'         => $title
+					)
+				);
+
+				$content = $this->api->callAPI('POST', $url, $data);
+
+				$result = $content;
+
+				if($result['message'] == "Input success."){
+					redirect(site_url('blog/read/'. $title));
+				}
+			}
+
 		}
 	}
 }

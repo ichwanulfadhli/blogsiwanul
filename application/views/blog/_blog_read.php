@@ -149,7 +149,7 @@ setlocale(LC_TIME, 'id_ID');
 										<textarea class="form-control" name="komen" id="editor1" placeholder="Komentar*" rows="6" required></textarea>
 									</span>
 									<div class="media-footer mt-xl-3">
-										<input type="submit" class="btn btn-primary btn-round btn-wd float-right" value="Buat Komentar">
+										<input type="submit" name="submit" class="btn btn-primary btn-round btn-wd float-right" value="Buat Komentar">
 									</div>
 								</form>
 
@@ -161,22 +161,29 @@ setlocale(LC_TIME, 'id_ID');
 						<!-- Comments list -->
 						<div class="media-area comment">
 
-							<h3 class="title text-center"><?php echo count($comment['data']); ?> Komentar</h3>
+							<?php ($comment['data'] !== null ? print '<h3 class="title text-center">'. count($comment['data']). ' Komentar</h3>' : print ''); ?>
 
 							<?php
-							foreach ($comment['data'] as $result) {
+							if($comment['data'] == null){
 							?>
-								<div class="media mb-xl-5">
-									<div class="media-body">
-										<h4 class="media-heading"><?php echo $result['comment_guest_name']; ?> <small>· <?php echo $result['comment_date']; ?></small></h4>
-										<h6 class="text-muted"></h6>
-										<?php echo $result['comment_content']; ?>
-										<!-- <p>
-										Chance too good. God level bars. I'm so proud of @LifeOfDesiigner #1 song in the country. Panda! Don't be scared of the truth because we need to restart the human foundation in truth I stand with the most humility. We are so blessed!
-									</p> -->
-									</div>
+							<div class="media mb-xl-5">
+								<div class="media-body">
+									<h4 class="text-center text-muted">Belum ada komentar.</h4>
 								</div>
+							</div>
 							<?php
+							}
+							else{
+								foreach ($comment['data'] as $result) {
+							?>
+							<div class="media mb-xl-5">
+								<div class="media-body">
+									<h4 class="media-heading"><?php echo $result['comment_guest_name']; ?> <small>· <?php echo strftime("%d %B %Y", strtotime($result['comment_date'])) . ', pukul ' . strftime("%H:%M", strtotime($result['comment_date'])); ?></small></h4>
+									<?php echo $result['comment_content']; ?>
+								</div>
+							</div>
+							<?php
+								}
 							}
 							?>
 
