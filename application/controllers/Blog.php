@@ -24,6 +24,14 @@ class Blog extends CI_Controller{
 			show_404();
 		}
 		else{
+			if(!empty($this->session->userdata('c_comment'))){
+				echo '<script>';
+				echo 'alert("Berhasil membuat komentar, sekarang sedang menunggu persetujuan Admin.");';
+				echo '</script>';
+
+				$this->session->unset_userdata('c_comment');
+			}
+
 			$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Experiment/Posts?view=blog&title=". $title;
 			$content = $this->api->callAPI("GET", $url);
 			$data['blog'] = $content;
@@ -44,10 +52,10 @@ class Blog extends CI_Controller{
 
 				$data = http_build_query(
 					array(
-						'comment_guest_name' => $this->input->post('nama'),
+						'comment_guest_name'  => $this->input->post('nama'),
 						'comment_guest_email' => $this->input->post('email'),
-						'comment_content'    => $this->input->post('komen'),
-						'post_title'         => $title
+						'comment_content'     => $this->input->post('komen'),
+						'post_title'          => $title
 					)
 				);
 
@@ -56,6 +64,7 @@ class Blog extends CI_Controller{
 				$result = $content;
 
 				if($result['message'] == "Input success."){
+					$this->session->set_userdata('c_comment', 1);
 					redirect(site_url('blog/read/'. $title));
 				}
 			}
