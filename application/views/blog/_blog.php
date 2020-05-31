@@ -75,9 +75,16 @@ setlocale(LC_TIME, 'id_ID');
 	<!-- Navigation panel -->
 	<nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
 		<div class="container">
-			<a href="javascript:void(0)" class="nav-link back" style="color: white;" data-toggle="tooltip" data-placement="right" title="Kembali" data-container="body">
-				<i class="material-icons" style="font-size: 28px;">keyboard_backspace</i>
-			</a>
+			<div class="row px-2">
+				<div class="col-auto align-self-center" style="padding: 10px;">
+					<a href="javascript:void(0)" class="back rounded-circle" style="color: white; width: 60px; height: 60px;">
+						<i class="material-icons" style="font-size: 28px;">keyboard_backspace</i>
+					</a>
+				</div>
+				<div class="col-auto align-self-center" style="padding: 10px;">
+					<p style="color: white; margin: 0; font-weight: 700; font-size: 20px;">Blog</p>
+				</div>
+			</div>
 		</div>
 	</nav>
 	<!-- End of navigation panel -->
@@ -117,12 +124,12 @@ setlocale(LC_TIME, 'id_ID');
 				<div class="row justify-content-md-center">
 					<?php
 					if ($all_blogs['data'] === null) {
-						?>
+					?>
 						<h3 class="px-5"><i>Belum ada konten, stay tuned guys ; )</i></h3>
 						<?php
-						} else {
-							foreach ($all_blogs['data'] as $content) {
-								?>
+					} else {
+						foreach ($all_blogs['data'] as $content) {
+						?>
 							<div class="col-md-5">
 								<div class="card" style="height: 35rem;">
 									<img class="card-img-top" style="height: 50%;" src="<?php echo $content['post_cover']; ?>" alt="Blog cover">
@@ -137,7 +144,7 @@ setlocale(LC_TIME, 'id_ID');
 										<a href="<?php echo site_url('blog/read/' . $content['post_url']); ?>" style="font-size: 14px; padding: 10px;" class="btn btn-primary btn-link">
 											<i class="material-icons">book</i> &nbsp;&nbsp;Baca Blog
 										</a>
-										<a href="<?php echo site_url('blog/read/' . $content['post_url']. '#comment'); ?>" style="font-size: 14px; padding: 10px;" class="btn btn-primary btn-link">
+										<a href="<?php echo site_url('blog/read/' . $content['post_url'] . '#comment'); ?>" style="font-size: 14px; padding: 10px;" class="btn btn-primary btn-link">
 											<i class="material-icons">comment</i> &nbsp;&nbsp;Komentar
 										</a>
 									</div>
@@ -153,7 +160,7 @@ setlocale(LC_TIME, 'id_ID');
 				<!-- Pagination -->
 				<!-- <?php
 						if ($all_blogs['data'] !== null && count($all_blogs['data']) > 6) {
-							?>
+						?>
 					<nav aria-label="Page navigation">
 						<ul class="pagination justify-content-center mt-5">
 							<li class="page-item">
@@ -174,7 +181,7 @@ setlocale(LC_TIME, 'id_ID');
 						</ul>
 					</nav>
 				<?php
-				}
+						}
 				?> -->
 				<!-- End of pagination -->
 
@@ -243,9 +250,9 @@ setlocale(LC_TIME, 'id_ID');
 	<script src="<?php echo base_url('assets/js/material-kit.js'); ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('assets/js/my.js'); ?>" type="text/javascript"></script>
 	<script>
-	    $(".back").click(function() {
-	        window.location.href = window.location.origin;
-	    });
+		$(".back").click(function() {
+			window.location.href = window.location.origin;
+		});
 	</script>
 	<!-- End of control center -->
 </body>

@@ -71,9 +71,16 @@ setlocale(LC_TIME, 'id_ID');
 	<!-- Navigation panel -->
 	<nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
 		<div class="container">
-			<a href="javascript:void(0)" class="nav-link back" style="color: white;" data-toggle="tooltip" data-placement="right" title="Kembali" data-container="body">
-				<i class="material-icons" style="font-size: 28px;">keyboard_backspace</i>
-			</a>
+			<div class="row px-2">
+				<div class="col-auto align-self-center" style="padding: 10px;">
+					<a href="javascript:void(0)" class="back rounded-circle" style="color: white; width: 60px; height: 60px;">
+						<i class="material-icons" style="font-size: 28px;">keyboard_backspace</i>
+					</a>
+				</div>
+				<div class="col-auto align-self-center" style="padding: 10px;">
+					<p style="color: white; margin: 0; font-weight: 700; font-size: 20px;">Baca Blog</p>
+				</div>
+			</div>
 		</div>
 	</nav>
 	<!-- End of navigation panel -->
@@ -161,27 +168,26 @@ setlocale(LC_TIME, 'id_ID');
 						<!-- Comments list -->
 						<div class="media-area comment">
 
-							<?php ($comment['data'] !== null ? print '<h3 class="title text-center">'. count($comment['data']). ' Komentar</h3>' : print ''); ?>
+							<?php ($comment['data'] !== null ? print '<h3 class="title text-center">' . count($comment['data']) . ' Komentar</h3>' : print ''); ?>
 
 							<?php
-							if($comment['data'] == null){
+							if ($comment['data'] == null) {
 							?>
-							<div class="media mb-xl-5">
-								<div class="media-body">
-									<h4 class="text-center text-muted">Belum ada komentar.</h4>
+								<div class="media mb-xl-5">
+									<div class="media-body">
+										<h4 class="text-center text-muted">Belum ada komentar.</h4>
+									</div>
 								</div>
-							</div>
-							<?php
-							}
-							else{
+								<?php
+							} else {
 								foreach ($comment['data'] as $result) {
-							?>
-							<div class="media mb-xl-5">
-								<div class="media-body">
-									<h4 class="media-heading"><?php echo $result['comment_guest_name']; ?> <small>· <?php echo strftime("%d %B %Y", strtotime($result['comment_date'])) . ', pukul ' . strftime("%H:%M", strtotime($result['comment_date'])); ?></small></h4>
-									<?php echo $result['comment_content']; ?>
-								</div>
-							</div>
+								?>
+									<div class="media mb-xl-5">
+										<div class="media-body">
+											<h4 class="media-heading"><?php echo $result['comment_guest_name']; ?> <small>· <?php echo strftime("%d %B %Y", strtotime($result['comment_date'])) . ', pukul ' . strftime("%H:%M", strtotime($result['comment_date'])); ?></small></h4>
+											<?php echo $result['comment_content']; ?>
+										</div>
+									</div>
 							<?php
 								}
 							}
