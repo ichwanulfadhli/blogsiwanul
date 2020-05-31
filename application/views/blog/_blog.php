@@ -21,8 +21,8 @@ setlocale(LC_TIME, 'id_ID');
 
 
 	<!-- Icon -->
-	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.png'); ?>'">
-	<link rel="icon" type="image/png" href="<?php echo base_url('assets/img/favicon.png'); ?>">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.png?'). md5_file(base_url('assets/img/apple-icon.png')); ?>'">
+	<link rel="icon" type="image/png" href="<?php echo base_url('assets/img/favicon.png?'). md5_file(base_url('assets/img/favicon.png')); ?>">
 	<!-- End of icon -->
 
 
@@ -40,7 +40,7 @@ setlocale(LC_TIME, 'id_ID');
 
 
 	<!-- CSS Files -->
-	<link href="<?php echo base_url('assets/css/material-kit.css'); ?>" rel="stylesheet" />
+	<link href="<?php echo base_url('assets/css/material-kit.css?'). md5_file(base_url('assets/css/material-kit.css')); ?>" rel="stylesheet" />
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	<!-- End of CSS files -->
 
@@ -48,12 +48,10 @@ setlocale(LC_TIME, 'id_ID');
 	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161399100-3"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-
 		function gtag() {
 			dataLayer.push(arguments);
 		}
 		gtag('js', new Date());
-
 		gtag('config', 'UA-161399100-3');
 	</script> -->
 	<!-- End of Global site tag Google Analytics -->
@@ -82,7 +80,7 @@ setlocale(LC_TIME, 'id_ID');
 					</a>
 				</div>
 				<div class="col-auto align-self-center" style="padding: 10px;">
-					<p style="color: white; margin: 0; font-weight: 700; font-size: 20px;">Blog</p>
+					<p style="color: white; margin: 0; font-weight: 700; font-size: 20px;">Kumpulan Blog</p>
 				</div>
 			</div>
 		</div>
@@ -96,10 +94,10 @@ setlocale(LC_TIME, 'id_ID');
 			<div class="row">
 				<div class="col-xl-8 mx-auto mt-5">
 					<div class="brand text-center">
-						<img width="35%" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png'); ?>" alt="Logo Blog si WANUL">
+						<img width="35%" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png?'). md5_file(base_url('assets/img/Blog-Si-WANUL_Logo.png')); ?>" alt="Logo Blog si WANUL">
 						<h1 class="title"><i>Kumpulan Blog</i></h1>
 						<a href="javascript:void(0)" class="scroll-to" id="blog">
-							<img class="scroll-down-img" src="<?php echo base_url('assets/img/scroll-down.gif'); ?>" alt="Scroll down">
+							<img class="scroll-down-img" src="<?php echo base_url('assets/img/scroll-down.gif?'). md5_file(base_url('assets/img/scroll-down.gif')); ?>" alt="Scroll down">
 						</a>
 					</div>
 				</div>
@@ -120,16 +118,15 @@ setlocale(LC_TIME, 'id_ID');
 		<!-- All blogs -->
 		<div class="container blog">
 			<div class="section text-center">
-				<h2 class="title">Kumpulan Blog</h2>
-				<div class="row justify-content-md-center">
+			    <div class="row justify-content-md-center">
 					<?php
 					if ($all_blogs['data'] === null) {
-					?>
+						?>
 						<h3 class="px-5"><i>Belum ada konten, stay tuned guys ; )</i></h3>
 						<?php
-					} else {
-						foreach ($all_blogs['data'] as $content) {
-						?>
+						} else {
+							foreach ($all_blogs['data'] as $content) {
+								?>
 							<div class="col-md-5">
 								<div class="card" style="height: 35rem;">
 									<img class="card-img-top" style="height: 50%;" src="<?php echo $content['post_cover']; ?>" alt="Blog cover">
@@ -144,7 +141,7 @@ setlocale(LC_TIME, 'id_ID');
 										<a href="<?php echo site_url('blog/read/' . $content['post_url']); ?>" style="font-size: 14px; padding: 10px;" class="btn btn-primary btn-link">
 											<i class="material-icons">book</i> &nbsp;&nbsp;Baca Blog
 										</a>
-										<a href="<?php echo site_url('blog/read/' . $content['post_url'] . '#comment'); ?>" style="font-size: 14px; padding: 10px;" class="btn btn-primary btn-link">
+										<a href="<?php echo site_url('blog/read/' . $content['post_url']. '#comment'); ?>" style="font-size: 14px; padding: 10px;" class="btn btn-primary btn-link">
 											<i class="material-icons">comment</i> &nbsp;&nbsp;Komentar
 										</a>
 									</div>
@@ -160,7 +157,7 @@ setlocale(LC_TIME, 'id_ID');
 				<!-- Pagination -->
 				<!-- <?php
 						if ($all_blogs['data'] !== null && count($all_blogs['data']) > 6) {
-						?>
+							?>
 					<nav aria-label="Page navigation">
 						<ul class="pagination justify-content-center mt-5">
 							<li class="page-item">
@@ -181,7 +178,7 @@ setlocale(LC_TIME, 'id_ID');
 						</ul>
 					</nav>
 				<?php
-						}
+				}
 				?> -->
 				<!-- End of pagination -->
 
@@ -228,31 +225,31 @@ setlocale(LC_TIME, 'id_ID');
 
 
 	<!--   Core JS Files   -->
-	<script src="<?php echo base_url('assets/js/core/jquery.min.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/core/jquery.min.js?'). md5_file(base_url('assets/js/core/jquery.min.js')); ?>" type="text/javascript"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<script src="<?php echo base_url('assets/js/core/popper.min.js'); ?>" type="text/javascript"></script>
-	<script src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js'); ?>" type="text/javascript"></script>
-	<script src="<?php echo base_url('assets/js/plugins/moment.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/js/core/popper.min.js?'). md5_file(base_url('assets/js/core/popper.min.js')); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js?'). md5_file(base_url('assets/js/core/bootstrap-material-design.min.js')); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/plugins/moment.min.js?'). md5_file(base_url('assets/js/plugins/moment.min.js')); ?>"></script>
 	<!-- End of core JS files -->
 
 
 	<!-- Plugin for the Datepicker -->
-	<script src="<?php echo base_url('assets/js/plugins/bootstrap-datetimepicker.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/plugins/bootstrap-datetimepicker.js?'). md5_file(base_url('assets/js/plugins/bootstrap-datetimepicker.js')); ?>" type="text/javascript"></script>
 	<!-- End of plugin for the datepicker -->
 
 
 	<!-- Plugin for the sliders -->
-	<script src="<?php echo base_url('assets/js/plugins/nouislider.min.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/plugins/nouislider.min.js?'), md5_file(base_url('assets/js/plugins/nouislider.min.js')); ?>" type="text/javascript"></script>
 	<!-- End of plugin for the sliders -->
 
 
 	<!-- Control center -->
-	<script src="<?php echo base_url('assets/js/material-kit.js'); ?>" type="text/javascript"></script>
-	<script src="<?php echo base_url('assets/js/my.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/material-kit.js?'). md5_file(base_url('assets/js/material-kit.js')); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/my.js?'). md5_file(base_url('assets/js/my.js')); ?>" type="text/javascript"></script>
 	<script>
-		$(".back").click(function() {
-			window.location.href = window.location.origin;
-		});
+	    $(".back").click(function() {
+	        window.location.href = window.location.origin;
+	    });
 	</script>
 	<!-- End of control center -->
 </body>

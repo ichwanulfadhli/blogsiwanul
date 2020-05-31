@@ -19,8 +19,8 @@ setlocale(LC_TIME, 'id_ID');
 	<!-- End of meta tags -->
 
 	<!-- Icon -->
-	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.png'); ?>'">
-	<link rel="icon" type="image/png" href="<?php echo base_url('assets/img/favicon.png'); ?>">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.png?'). md5_file(base_url('assets/img/apple-icon.png')); ?>'">
+	<link rel="icon" type="image/png" href="<?php echo base_url('assets/img/favicon.png?'). md5_file(base_url('assets/img/favicon.png')); ?>">
 	<!-- End of icon -->
 
 	<!-- Title -->
@@ -35,12 +35,12 @@ setlocale(LC_TIME, 'id_ID');
 	<!-- End of fonts and icons -->
 
 	<!-- CSS Files -->
-	<link href="<?php echo base_url('assets/css/material-kit.css'); ?>" rel="stylesheet" />
+	<link href="<?php echo base_url('assets/css/material-kit.css?'). md5_file(base_url('assets/css/material-kit.css')); ?>" rel="stylesheet" />
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	<!-- End of CSS files -->
 
 	<!-- Import CKEditor -->
-	<script src="<?php echo base_url('assets/js/plugins/ckeditor/ckeditor.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/js/plugins/ckeditor/ckeditor.js?'). md5_file(base_url('assets/js/plugins/ckeditor/ckeditor.js')); ?>"></script>
 	<!-- End of import CKEditor -->
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -91,11 +91,11 @@ setlocale(LC_TIME, 'id_ID');
 			<div class="row">
 				<div class="col-xl-8 mx-auto mt-5">
 					<div class="brand text-center">
-						<img width="35%" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png'); ?>" alt="Logo Blog si WANUL">
+						<img width="35%" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png?'). md5_file(base_url('assets/img/Blog-Si-WANUL_Logo.png')); ?>" alt="Logo Blog si WANUL">
 						<h2 class="title" style="margin: 10px 0px;"><i><?php echo $blog['data'][0]['post_title']; ?></i></h2>
 						<h5 style="margin: 0px;"><?php echo strftime("%d %B %Y", strtotime($blog['data'][0]['post_date'])); ?></h5>
 						<a href="javascript:void(0)" class="scroll-to" id="blog">
-							<img class="scroll-down-img" src="<?php echo base_url('assets/img/scroll-down.gif'); ?>" alt="Scroll down">
+							<img class="scroll-down-img" src="<?php echo base_url('assets/img/scroll-down.gif?'). md5_file(base_url('assets/img/scroll-down.gif')); ?>" alt="Scroll down">
 						</a>
 					</div>
 				</div>
@@ -118,7 +118,6 @@ setlocale(LC_TIME, 'id_ID');
 			<div class="section text-center">
 				<div class="row">
 					<div class="col-md-8 ml-auto mr-auto">
-						<h2 class="text-center title"><?php echo $blog['data'][0]['post_title']; ?></h2>
 						<div class="text-left description">
 							<?php echo $blog['data'][0]['post_content']; ?>
 						</div>
@@ -139,7 +138,7 @@ setlocale(LC_TIME, 'id_ID');
 
 								<form class="form" action="" method="POST">
 									<label>Email anda tidak akan dipublikasikan.</label><br>
-									<label>(*) Kolom wajib diisi.</label>
+									<label>(*) Wajib diisi.</label>
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group bmd-form-group">
@@ -168,26 +167,27 @@ setlocale(LC_TIME, 'id_ID');
 						<!-- Comments list -->
 						<div class="media-area comment">
 
-							<?php ($comment['data'] !== null ? print '<h3 class="title text-center">' . count($comment['data']) . ' Komentar</h3>' : print ''); ?>
+							<?php ($comment['data'] !== null ? print '<h3 class="title text-center">'. count($comment['data']). ' Komentar</h3>' : print ''); ?>
 
 							<?php
-							if ($comment['data'] == null) {
+							if($comment['data'] == null){
 							?>
-								<div class="media mb-xl-5">
-									<div class="media-body">
-										<h4 class="text-center text-muted">Belum ada komentar.</h4>
-									</div>
+							<div class="media mb-xl-5">
+								<div class="media-body">
+									<h4 class="text-center text-muted">Belum ada komentar.</h4>
 								</div>
-								<?php
-							} else {
+							</div>
+							<?php
+							}
+							else{
 								foreach ($comment['data'] as $result) {
-								?>
-									<div class="media mb-xl-5">
-										<div class="media-body">
-											<h4 class="media-heading"><?php echo $result['comment_guest_name']; ?> <small>· <?php echo strftime("%d %B %Y", strtotime($result['comment_date'])) . ', pukul ' . strftime("%H:%M", strtotime($result['comment_date'])); ?></small></h4>
-											<?php echo $result['comment_content']; ?>
-										</div>
-									</div>
+							?>
+							<div class="media mb-xl-5">
+								<div class="media-body">
+									<h4 class="media-heading"><?php echo $result['comment_guest_name']; ?> <small><?php echo strftime("%d %B %Y", strtotime($result['comment_date'])) . ', pukul ' . strftime("%H:%M", strtotime($result['comment_date'])); ?></small></h4>
+									<?php echo $result['comment_content']; ?>
+								</div>
+							</div>
 							<?php
 								}
 							}
@@ -237,30 +237,30 @@ setlocale(LC_TIME, 'id_ID');
 	<!-- End of footer -->
 
 	<!--   Core JS Files   -->
-	<script src="<?php echo base_url('assets/js/core/jquery.min.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/core/jquery.min.js?'). md5_file(base_url('assets/js/core/jquery.min.js')); ?>" type="text/javascript"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<script src="<?php echo base_url('assets/js/core/popper.min.js'); ?>" type="text/javascript"></script>
-	<script src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js'); ?>" type="text/javascript"></script>
-	<script src="<?php echo base_url('assets/js/plugins/moment.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/js/core/popper.min.js?'). md5_file(base_url('assets/js/core/popper.min.js')); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js?'). md5_file(base_url('assets/js/core/bootstrap-material-design.min.js')); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/plugins/moment.min.js?'). md5_file(base_url('assets/js/plugins/moment.min.js')); ?>"></script>
 	<!-- End of core JS files -->
 
 	<!-- Plugin for the Datepicker -->
-	<script src="<?php echo base_url('assets/js/plugins/bootstrap-datetimepicker.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/plugins/bootstrap-datetimepicker.js?'). md5_file(base_url('assets/js/plugins/bootstrap-datetimepicker.js')); ?>" type="text/javascript"></script>
 	<!-- End of plugin for the datepicker -->
 
 	<!-- Plugin for the sliders -->
-	<script src="<?php echo base_url('assets/js/plugins/nouislider.min.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/plugins/nouislider.min.js?'). md5_file(base_url('assets/js/plugins/nouislider.min.js')); ?>" type="text/javascript"></script>
 	<!-- End of plugin for the sliders -->
 
 	<!-- Control center -->
-	<script src="<?php echo base_url('assets/js/material-kit.js'); ?>" type="text/javascript"></script>
-	<script src="<?php echo base_url('assets/js/my.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/material-kit.js?'). md5_file(base_url('assets/js/material-kit.js')); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/my.js?'). md5_file(base_url('assets/js/my.js')); ?>" type="text/javascript"></script>
 	<script>
 		$(".back").click(function() {
 			if (document.referrer === '') {
 				window.location.href = window.location.origin;
 			} else {
-				window.location.href = document.referrer;
+				window.history.go(-1);
 			}
 		});
 	</script>

@@ -21,9 +21,9 @@ setlocale(LC_TIME, 'id_ID');
 
 
 	<!-- Icon -->
-	<link rel="shortcut icon" href="<?php echo base_url('assets/img/favicon.png'); ?>">
-	<link rel="icon" type="image/png" href="<?php echo base_url('assets/img/favicon.png'); ?>">
-	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.png'); ?>'">
+	<link rel="shortcut icon" href="<?php echo base_url('assets/img/favicon.png?'). md5_file(base_url('assets/img/favicon.png')); ?>">
+	<link rel="icon" type="image/png" href="<?php echo base_url('assets/img/favicon.png?'). md5_file(base_url('assets/img/favicon.png')); ?>">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.png?'). md5_file(base_url('assets/img/apple-icon.png')); ?>'">
 	<!-- End of icon -->
 
 
@@ -41,7 +41,7 @@ setlocale(LC_TIME, 'id_ID');
 
 
 	<!-- CSS Files -->
-	<link href="<?php echo base_url('assets/css/material-kit.css'); ?>" rel="stylesheet" />
+	<link href="<?php echo base_url('assets/css/material-kit.css?'). md5_file(base_url('assets/css/material-kit.css')); ?>" rel="stylesheet" />
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	<!-- End of CSS files -->
 
@@ -77,7 +77,7 @@ setlocale(LC_TIME, 'id_ID');
 	<nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
 		<div class="container">
 			<div class="navbar-translate">
-				<button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler rounded-circle" type="button" style="padding: 10px;" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="navbar-toggler-icon"></span>
 					<span class="navbar-toggler-icon"></span>
@@ -114,7 +114,7 @@ setlocale(LC_TIME, 'id_ID');
 			<div class="row">
 				<div class="col-md-8 ml-auto mr-auto">
 					<div class="brand text-center">
-						<img width="80%" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png'); ?>" alt="Logo Blog si WANUL">
+						<img width="80%" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png?'). md5_file(base_url('assets/img/Blog-Si-WANUL_Logo.png')); ?>" alt="Logo Blog si WANUL">
 						<h3 class="title text-center">- Welcome to My Blog -</h3>
 					</div>
 				</div>
@@ -235,27 +235,27 @@ setlocale(LC_TIME, 'id_ID');
 
 
 	<!--   Core JS Files   -->
-	<script src="<?php echo base_url('assets/js/core/jquery.min.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/core/jquery.min.js?'). md5_file(base_url('assets/js/core/jquery.min.js')); ?>" type="text/javascript"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<script src="<?php echo base_url('assets/js/core/popper.min.js'); ?>" type="text/javascript"></script>
-	<script src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js'); ?>" type="text/javascript"></script>
-	<script src="<?php echo base_url('assets/js/plugins/moment.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/js/core/popper.min.js?'). md5_file(base_url('assets/js/core/popper.min.js')); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js?'). md5_file(base_url('assets/js/core/bootstrap-material-design.min.js')); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/plugins/moment.min.js?'). md5_file(base_url('assets/js/plugins/moment.min.js')); ?>"></script>
 	<!-- End of core JS files -->
 
 
 	<!-- Plugin for the Datepicker -->
-	<script src="<?php echo base_url('assets/js/plugins/bootstrap-datetimepicker.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/plugins/bootstrap-datetimepicker.js?'). md5_file(base_url('assets/js/plugins/bootstrap-datetimepicker.js')); ?>" type="text/javascript"></script>
 	<!-- End of plugin for the datepicker -->
 
 
 	<!-- Plugin for the sliders -->
-	<script src="<?php echo base_url('assets/js/plugins/nouislider.min.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/plugins/nouislider.min.js?'). md5_file(base_url('assets/js/plugins/nouislider.min.js')); ?>" type="text/javascript"></script>
 	<!-- End of plugin for the sliders -->
 
 
 	<!-- Control center -->
-	<script src="<?php echo base_url('assets/js/material-kit.js'); ?>" type="text/javascript"></script>
-	<script src="<?php echo base_url('assets/js/my.js'); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/material-kit.js?'). md5_file(base_url('assets/js/material-kit.js')); ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/js/my.js?'). md5_file(base_url('assets/js/my.js')); ?>" type="text/javascript"></script>
 	<!-- End of control center -->
 </body>
 
