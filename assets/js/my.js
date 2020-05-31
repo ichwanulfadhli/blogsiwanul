@@ -21,13 +21,12 @@ $(document).ready(function () {
         ];
 
         // Full path
-        var url = window.location.origin + "/blogsiwanul_project/blogsiwanul/" + "/assets/img/";
+        var url = window.location.origin + "/assets/img/";
         // Output from the image array index
         var output = images[Math.floor(Math.random() * images.length)];
 
         // Returning the result
         return url + output;
-
     }
 
     // Displaying random background image on page load if selector "background" is exists
@@ -40,17 +39,17 @@ $(document).ready(function () {
         if (window.location.href.indexOf("aboutMe") > -1) {
             $("html, body").animate({
                 scrollTop: $('.aboutMe').offset().top
-            }, 1000, 'easeInOutExpo');
+            }, 1500, 'easeInOutExpo');
         }
         else if (window.location.href.indexOf("recentBlog") > -1) {
             $("html, body").animate({
                 scrollTop: $('.recentBlog').offset().top
-            }, 1000, 'easeInOutExpo');
+            }, 1500, 'easeInOutExpo');
         }
         else if (window.location.href.indexOf("comment") > -1) {
             $("html, body").animate({
                 scrollTop: $('.comment').offset().top
-            }, 1000, 'easeInOutExpo');
+            }, 1500, 'easeInOutExpo');
         }
     });
 
@@ -62,7 +61,7 @@ $(document).ready(function () {
             if ($('.' + section).length !== 0) {
                 $("html, body").animate({
                     scrollTop: $('.' + section).offset().top
-                }, 1000, 'easeInOutExpo');
+                }, 1500, 'easeInOutExpo');
             }
         });
     });
@@ -80,12 +79,15 @@ $(document).ready(function () {
 
     // Function scroll to top
     $("#toTop").click(function () {
-        if(window.location.hash){
-            window.history.replaceState({}, document.title, "/");
-        }
         // Scrolling animation
         $("html, body").animate({
             scrollTop: 0
-        }, 1000, 'easeInOutExpo');
+        }, 1500, 'easeInOutExpo');
+        
+        if(window.location.hash){
+            // Removing hash from url
+            window.location.replace("#");
+            history.replaceState({}, '', window.location.href.slice(0, -1));
+        }
     });
 });
