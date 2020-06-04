@@ -87,7 +87,7 @@ setlocale(LC_TIME, 'id_ID');
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<a class="nav-link dropdown-toggle" href="javascript:void(0);" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<i class="material-icons">bookmarks</i> Blog
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -147,7 +147,7 @@ setlocale(LC_TIME, 'id_ID');
 						?>
 							<div class="col-md-7">
 								<div class="card">
-									<img class="card-img-top" src="<?php echo $data['post_cover']; ?>" alt="Blog cover">
+									<img class="card-img-top" src="<?php echo $data['post_cover']; ?>" alt="<?php echo $data['post_title']; ?>">
 									<div class="card-body text-left">
 										<p class="text-muted" style="font-size: 14px; margin: 0px;"><b><?php echo strftime("%d %B %Y", strtotime($data['post_date'])) . ', pukul ' . strftime("%H:%M", strtotime($data['post_date'])); ?></b></p>
 										<h4 class="card-title" style="margin-top: 0px;"><?php echo $data['post_title']; ?></h4>

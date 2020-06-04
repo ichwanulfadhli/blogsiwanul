@@ -74,13 +74,13 @@ setlocale(LC_TIME, 'id_ID');
 	<nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
 		<div class="container">
 			<div class="row px-2">
-				<div class="col-auto align-self-center" style="padding: 10px;">
-					<a href="javascript:void(0)" class="back rounded-circle" style="color: white; width: 60px; height: 60px;">
+				<div class="col-auto align-self-center nav-item" style="padding: 10px;">
+					<a href="javascript:void(0)" class="back rounded-circle" style="color: inherit; width: 60px; height: 60px;">
 						<i class="material-icons" style="font-size: 28px;">keyboard_backspace</i>
 					</a>
 				</div>
-				<div class="col-auto align-self-center" style="padding: 10px;">
-					<p style="color: white; margin: 0; font-weight: 700; font-size: 20px;">Kumpulan Blog</p>
+				<div class="col-auto align-self-center nav-item" style="padding: 10px;">
+					<p style="margin: 0; font-weight: 700; font-size: 20px;">Kumpulan Blog</p>
 				</div>
 			</div>
 		</div>
@@ -118,7 +118,7 @@ setlocale(LC_TIME, 'id_ID');
 		<!-- All blogs -->
 		<div class="container blog">
 			<div class="section text-center">
-			    <div class="row justify-content-md-center">
+			    <div class="row row-cols-2">
 					<?php
 					if ($all_blogs['data'] === null) {
 						?>
@@ -127,9 +127,9 @@ setlocale(LC_TIME, 'id_ID');
 						} else {
 							foreach ($all_blogs['data'] as $content) {
 								?>
-							<div class="col-md-5">
-								<div class="card" style="height: 35rem;">
-									<img class="card-img-top" style="height: 50%;" src="<?php echo $content['post_cover']; ?>" alt="Blog cover">
+							<div class="col-md-6">
+								<div class="card">
+									<img class="card-img-top" style="height: 20rem;" src="<?php echo $content['post_cover']; ?>" alt="<?php echo $content['post_title']; ?>">
 									<div class="card-body text-left">
 										<p class="text-muted" style="font-size: 14px; margin: 0px;"><b><?php echo strftime("%d %B %Y", strtotime($content['post_date'])) . ', pukul ' . strftime("%H:%M", strtotime($content['post_date'])); ?></b></p>
 										<h4 class="card-title" style="margin-top: 0px;"><?php echo $content['post_title']; ?></h4>

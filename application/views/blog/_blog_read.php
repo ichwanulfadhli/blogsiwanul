@@ -72,13 +72,13 @@ setlocale(LC_TIME, 'id_ID');
 	<nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
 		<div class="container">
 			<div class="row px-2">
-				<div class="col-auto align-self-center" style="padding: 10px;">
-					<a href="javascript:void(0)" class="back rounded-circle" style="color: white; width: 60px; height: 60px;">
+				<div class="col-auto align-self-center nav-link" style="padding: 10px;">
+					<a href="javascript:void(0)" class="back rounded-circle" style="color: inherit; width: 60px; height: 60px;">
 						<i class="material-icons" style="font-size: 28px;">keyboard_backspace</i>
 					</a>
 				</div>
-				<div class="col-auto align-self-center" style="padding: 10px;">
-					<p style="color: white; margin: 0; font-weight: 700; font-size: 20px;">Baca Blog</p>
+				<div class="col-auto align-self-center nav-item" style="padding: 10px;">
+					<p style="margin: 0; font-weight: 700; font-size: 20px;">Baca Blog</p>
 				</div>
 			</div>
 		</div>
@@ -93,7 +93,7 @@ setlocale(LC_TIME, 'id_ID');
 					<div class="brand text-center">
 						<img width="35%" src="<?php echo base_url('assets/img/Blog-Si-WANUL_Logo.png?'). md5_file(base_url('assets/img/Blog-Si-WANUL_Logo.png')); ?>" alt="Logo Blog si WANUL">
 						<h2 class="title" style="margin: 10px 0px;"><i><?php echo $blog['data'][0]['post_title']; ?></i></h2>
-						<h5 style="margin: 0px;"><?php echo strftime("%d %B %Y", strtotime($blog['data'][0]['post_date'])); ?></h5>
+						<h5 style="margin: 0px; color: #FFFFFF"><?php echo strftime("%d %B %Y", strtotime($blog['data'][0]['post_date'])); ?></h5>
 						<a href="javascript:void(0)" class="scroll-to" id="blog">
 							<img class="scroll-down-img" src="<?php echo base_url('assets/img/scroll-down.gif?'). md5_file(base_url('assets/img/scroll-down.gif')); ?>" alt="Scroll down">
 						</a>
@@ -257,9 +257,11 @@ setlocale(LC_TIME, 'id_ID');
 	<script src="<?php echo base_url('assets/js/my.js?'). md5_file(base_url('assets/js/my.js')); ?>" type="text/javascript"></script>
 	<script>
 		$(".back").click(function() {
-			if (document.referrer === '') {
+			console.log(document.referrer.includes("https://blogsiwanul.my.id"));
+			if (document.referrer === '' || document.referrer.includes("https://blogsiwanul.my.id") === false) {
 				window.location.href = window.location.origin;
-			} else {
+			}
+			else if(document.referrer.includes("https://blogsiwanul.my.id")) {
 				window.history.go(-1);
 			}
 		});

@@ -1,4 +1,24 @@
 $(document).ready(function () {
+    
+    // Go to selected section when the parameter exists on url
+    $(document).ready(function () {
+        if (window.location.href.indexOf("aboutMe") > -1) {
+            $("html, body").animate({
+                scrollTop: $('.aboutMe').offset().top
+            }, 1500, 'easeInOutExpo');
+        }
+        else if (window.location.href.indexOf("recentBlog") > -1) {
+            $("html, body").animate({
+                scrollTop: $('.recentBlog').offset().top
+            }, 1500, 'easeInOutExpo');
+        }
+        else if (window.location.href.indexOf("comment") > -1) {
+            $("html, body").animate({
+                scrollTop: $('.comment').offset().top
+            }, 1500, 'easeInOutExpo');
+        }
+    });
+
     if (document.getElementById('editor1')) {
         var editor = CKEDITOR.replace('editor1');
 
@@ -33,25 +53,6 @@ $(document).ready(function () {
     if(document.getElementById("background")){
         document.getElementById("background").style.backgroundImage = "url(" + randomBackground(1, 6) + ")";
     }
-
-    // Go to selected section when the parameter exists on url
-    $(document).ready(function () {
-        if (window.location.href.indexOf("aboutMe") > -1) {
-            $("html, body").animate({
-                scrollTop: $('.aboutMe').offset().top
-            }, 1500, 'easeInOutExpo');
-        }
-        else if (window.location.href.indexOf("recentBlog") > -1) {
-            $("html, body").animate({
-                scrollTop: $('.recentBlog').offset().top
-            }, 1500, 'easeInOutExpo');
-        }
-        else if (window.location.href.indexOf("comment") > -1) {
-            $("html, body").animate({
-                scrollTop: $('.comment').offset().top
-            }, 1500, 'easeInOutExpo');
-        }
-    });
 
     // Function to scroll to each section on the page
     $(function () {
