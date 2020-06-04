@@ -9,11 +9,11 @@ class Home extends CI_Controller {
 	}
 
 	public function index(){
-		$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Experiment/Posts?view=recent";
+		$url = "https://resource.blogsiwanul.my.id/Posts?view=recent";
 		$content = $this->api->callAPI("GET", $url);
 		$data['recent_blog'] = $content;
 
-		$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Experiment/About";
+		$url = "https://resource.blogsiwanul.my.id/About";
 		$content = $this->api->callAPI("GET", $url);
 		$data['aboutme'] = $content;
 

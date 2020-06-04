@@ -19,7 +19,7 @@ class Sitemap extends CI_Controller {
 		
 		$this->load->model('SitemapModel');
 
-		$url = "https://api.blogsiwanul.my.id/index.php/Posts?view=all";
+		$url = "https://resource.blogsiwanul.my.id/Posts?view=all";
 		$content = $this->api->callAPI("GET", $url);
 		$data['blog'] = $content;
 

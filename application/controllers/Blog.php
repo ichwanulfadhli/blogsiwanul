@@ -9,7 +9,7 @@ class Blog extends CI_Controller{
 	}
 	
 	public function index(){
-		$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Experiment/Posts?view=all";
+		$url = "https://resource.blogsiwanul.my.id/Posts?view=all";
 		$content = $this->api->callAPI("GET", $url);
 		$data['all_blogs'] = $content;
       
@@ -32,11 +32,11 @@ class Blog extends CI_Controller{
 				$this->session->unset_userdata('c_comment');
 			}
 
-			$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Experiment/Posts?view=blog&title=". $title;
+			$url = "https://resource.blogsiwanul.my.id/Posts?view=blog&title=". $title;
 			$content = $this->api->callAPI("GET", $url);
 			$data['blog'] = $content;
 
-			$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Experiment/Posts/comment/". $title;
+			$url = "https://resource.blogsiwanul.my.id/Comment?v=". $title;
 			$content = $this->api->callAPI("GET", $url);
 			$data['comment'] = $content;
 			
@@ -48,7 +48,7 @@ class Blog extends CI_Controller{
 			}
 
 			if(!empty($this->input->post("submit"))){
-				$url = "http://localhost:85/blogsiwanul_project/blogsiwanul_api/index.php/Experiment/Posts/comment";
+				$url = "https://resource.blogsiwanul.my.id/Comment";
 
 				$data = http_build_query(
 					array(
